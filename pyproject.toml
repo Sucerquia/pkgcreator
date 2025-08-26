@@ -1,0 +1,34 @@
+[project]
+name = "pkgdeveloper"
+version = "1.0.0-alpha"
+description = "Package used for development of other packages. It is designed to deal with python and bash scripts."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    { name = "Daniel Sucerquia", email = "dsucerg@gmail.com" }
+]
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License (GPL)",
+    "Operating System :: OS Independent"
+]
+dependencies = [
+    "pytest",
+    "sphinx",
+    "pycodestyle"
+]
+
+[project.scripts]
+pkgdeveloper = "pkgdeveloper.cli.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ["*.sh"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+

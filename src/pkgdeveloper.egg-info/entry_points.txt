@@ -1,0 +1,2 @@
+[console_scripts]
+pkgdeveloper = pkgdeveloper.cli.main:main

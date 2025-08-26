@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: pkgdeveloper
+Version: 1.0.0a0
+Summary: Package used for development of other packages. It is designed to deal with python and bash scripts.
+Author-email: Daniel Sucerquia <dsucerg@gmail.com>
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: pytest
+Requires-Dist: sphinx
+Requires-Dist: pycodestyle
+
+# pkgdeveloper
+
+<TODO: add description>
