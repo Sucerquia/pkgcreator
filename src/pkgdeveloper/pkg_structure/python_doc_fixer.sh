@@ -128,9 +128,9 @@ fi
 
 # ==== Block of Definition in old documentation
 # In case it does not exist, a new block is created
-if [[ "$par_block" == "documentation-blocks_0.out" ]] || \
-   [[ "$return_block" == "documentation-blocks_0.out" ]] || \
-   [ ! -f "documentation-blocks_0.out" ]
+if [[ "$par_block" == "documentation-blocks_0_001.out" ]] || \
+   [[ "$return_block" == "documentation-blocks_0_001.out" ]] || \
+   [ ! -f "documentation-blocks_0_001.out" ]
 then
   echo "#new_line$leading_spaces# TODO: Add definition" > \
     documentation-blocks_def.out
