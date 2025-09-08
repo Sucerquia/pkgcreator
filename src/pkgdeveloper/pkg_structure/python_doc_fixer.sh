@@ -4,10 +4,11 @@ print_help() {
 echo "
 Code takes the documentation of a function and checks the documentation adding
 TODOs in the missing parts. The output is stored in a file called
-final_<method>_doc.txt
+final_<class>-<method>_doc.txt
 
+  -c  <class> Class to be checked.
   -f  <method> Function to be checked
-  -m  <module> Module that contains the Function
+  -m  <module> Module that contains the function
   -s  <n_spaces> number of leading spaces.
 
   -v  verbose.
@@ -80,10 +81,10 @@ mapfile -t ns_empty < <(cat $function.txt | grep -n "#new_line$" | \
 for (( i=0 ; i < $(( ${#ns_empty[@]} - 1 )) ; i++ ))
 do
   pkgdeveloper find_blocks -f $function.txt \
-                      -s ${ns_empty[$i]} \
-                      -e ${ns_empty[$(( i + 1 ))]} \
-                      -i -o documentation-blocks_$i || \
-                      fail "finding blocks"
+                           -s ${ns_empty[$i]} \
+                           -e ${ns_empty[$(( i + 1 ))]} \
+                           -i -o documentation-blocks_$i || \
+    fail "finding blocks"
 
   # Note for developers: I had to add the next while because the creation of
   # the files was a bit delayed and that created errors trying to find those
@@ -136,7 +137,7 @@ then
     documentation-blocks_def.out
   definition_block="documentation-blocks_def.out"
 else
-  definition_block="documentation-blocks_0.out"
+  definition_block="documentation-blocks_0_001.out"
 fi
 
 # === Check parameters ========================================================

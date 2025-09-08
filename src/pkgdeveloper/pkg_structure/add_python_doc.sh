@@ -195,13 +195,13 @@ do
           rm final_$class-$method.txt
           continue
         fi
-
         rel_n_meth_end=$( tail -n +$rel_n_meth ${class}_complete_001.out \
                           | grep -n ")" | head -n 1 | \
                           cut -d ':' -f 1)
         doc_num_start=$(( n_class + rel_n_meth + rel_n_meth_end ))
         insert_doc $doc_num_start $fil $method $class
-        insert_doc $(( rel_n_meth + rel_n_meth_end )) ${class}_complete_001.out \
+        insert_doc $(( rel_n_meth + rel_n_meth_end )) \
+                   ${class}_complete_001.out \
                    $method $class
         # delete documentation file
         rm final_$class-$method.txt || \

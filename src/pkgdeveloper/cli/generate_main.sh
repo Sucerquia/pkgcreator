@@ -10,7 +10,8 @@ include the python modules that contain the comment '# add2executable' one line
 before to be defined and all the sh files. It also adds keywords like path or
 documentation.
 
-  -w  source directory of the package. Default: current directory.
+  -n  <name_of_pkg=pkgdeveloper>  name of the package.
+  -w  <src_dir=./> source directory of the package.
 
   -h  prints this message.
 "
@@ -37,8 +38,9 @@ gm_original_dir=$(pwd)
 
 cd "$workdir/cli" || fail "moving to \"cli\" in package directory"
 
-# TODO: copy main_template.py from pkgdeveloper!
-cp "main_template.py" "$output" || fail "copying template"
+# Create the main.py file
+cp "$(pkgdeveloper path)cli/main_template.py" "$output" || fail "copying template"
+sed -i "s/pkgdeveloper/$pkg_name/g" $output
 cd ../ || fail "moving to package directory"
 
 # python modules

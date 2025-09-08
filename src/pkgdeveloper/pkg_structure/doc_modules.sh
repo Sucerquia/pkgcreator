@@ -1,7 +1,48 @@
 #!/bin/bash
 
 source "$(pkgdeveloper basics -path)" BasicModDoc
-  
+
+bash_help_block() {
+  file=$2
+  tmp_name=${file##*/}
+  plain_name=${tmp_name%.sh}
+
+  script_title="$plain_name"
+
+  { echo ; printf '%0.s=' $(seq 1 ${#script_title}) ; echo "" ; }
+  echo $script_title
+  { printf '%0.s=' $(seq 1 ${#script_title}) ; echo "" ; }
+  echo
+  echo ".. container:: bash-script-title"
+  echo
+  echo '   :ref:`[script] <'$plain_name'>` **'$1'**'
+  echo
+  echo ".. container:: bash-script-doc"
+  echo
+  echo "   .. line-block::"
+
+  $2 -h | sed "s/^/      /g"
+}
+
+create_bashscript_rst() {
+  local doc_path=$1
+  local rel_path=$2
+  local file=$3
+
+  local tmp_name=${file##*/}
+  local plain_name=${tmp_name%.sh}
+  local rst_name="$doc_path/bash_rsts_scripts/$plain_name.rst"
+
+  echo ".. _$plain_name:" > $rst_name
+  echo "" >> $rst_name
+  script_title="Script of $pkg_name $plain_name"
+  { echo ; printf '%0.s=' $(seq 1 ${#script_title}) ; echo "" ; } >> $rst_name
+  echo $script_title >> $rst_name
+  { printf '%0.s=' $(seq 1 ${#script_title}); echo ; echo ; } >> $rst_name
+  echo ".. literalinclude:: ../$rel_path/$file" >> $rst_name
+  echo "   :language: bash" >> $rst_name
+}
+
 print_help() {
 echo "
 Code that explores the files in the package and automatically create the
@@ -11,7 +52,7 @@ documentation of all classes and functions that finds in it.
    -f   <fil1,fil2...> files to be ignored. Default: '__init__'
    -p   <relative_path> relative path directory to be checked. Relative in
         respect to the directory that stores the modules documentation (see the
-        flag -m). Default=../../src/pkgdeveloper
+        flag -m). Default=../../src/<name>, see flag -n
    -m   <absolute_path> absolute path to the directory that stores the modules
         documentation. Default: \$(pkgdeveloper path)/../../doc/modules
    -n   <name> pakage name. Default: pkgdeveloper
@@ -32,7 +73,7 @@ pkg_name="pkgdeveloper"
 relative_path=""
 
 # ==== Costumer set up ========================================================
-verbose=''
+verbose='true'
 mod_doc="$(pkgdeveloper path)/../../doc/modules"
 while getopts 'd:f:m:n:p:vh' flag;
 do
@@ -78,78 +119,40 @@ mapfile -t ignore_dirs < <(echo "$raw_ign_dirs" | tr ',' '\n')
 mapfile -t ignore_files < <(echo "$raw_ign_fils,$raw_ign_dirs" | tr ',' '\n')
 
 
-# ==== Directories ============================================================
+# Directories
 toignore=""
 for ign_dir in "${ignore_dirs[@]}"
 do
   toignore="$toignore $mod_path/$ign_dir"
   bool_ign="$bool_ign -path '*$ign_dir*' -o"
 done
-
+# ==== BODY ===================================================================
+# python autodoc
 sphinx-apidoc -ET -o $mod_doc $mod_path ${toignore[@]}
 
 
-
-# --- Bash scripts ------------------------------------------------------------
-
+# Bash scripts: for each bash script it creates two files: one for the
+# file documentation (in bash_rsts_doc) and the other for the raw code (in
+# bash_rsts_scripts).
 verbose "bash scripts"
-bash_help_block() {
-  file=$2
-  tmp_name=${file##*/}
-  plain_name=${tmp_name%.sh}
-
-  script_title="$plain_name"
-
-  { echo ; printf '%0.s=' $(seq 1 ${#script_title}) ; echo "" ; }
-  echo $script_title
-  { printf '%0.s=' $(seq 1 ${#script_title}) ; echo "" ; }
-  echo
-  echo ".. container:: bash-script-title"
-  echo
-  echo '   :ref:`[script] <'$plain_name'>` **'$1'**'
-  echo
-  echo ".. container:: bash-script-doc"
-  echo
-  echo "   .. line-block::"
-
-  $2 -h | sed "s/^/      /g"
-}
-
-
-create_bashscript_rst() {
-  local doc_path=$1
-  local rel_path=$2
-  local file=$3
-
-  local tmp_name=${file##*/}
-  local plain_name=${tmp_name%.sh}
-  local rst_name="$doc_path/bash_rsts_scripts/$plain_name.rst"
-
-  echo ".. _$plain_name:" > $rst_name
-  echo "" >> $rst_name
-  script_title="Script of $pkg_name $plain_name"
-  { echo ; printf '%0.s=' $(seq 1 ${#script_title}) ; echo "" ; } >> $rst_name
-  echo $script_title >> $rst_name
-  { printf '%0.s=' $(seq 1 ${#script_title}); echo ; echo ; } >> $rst_name
-  echo ".. literalinclude:: ../$rel_path/$file" >> $rst_name
-  echo "   :language: bash" >> $rst_name
-}
 
 cd $mod_path
 mapfile -t scripts < <(eval "find . -type f -not \(" \
                        "${bool_ign::-2}" "-prune \) -name '*.sh'" )
 
-
+# create directory for the raw scripts if it doesn't exist
 if [ ! -d "$mod_doc/bash_rsts_scripts" ] && [ ${#scripts[@]} -ne 0 ]
 then
   mkdir $mod_doc/bash_rsts_scripts
 fi
 
+# create directory for the raw documentations if it doesn't exist
 if [ ! -d "$mod_doc/bash_rsts_doc" ] && [ ${#scripts[@]} -ne 0 ]
 then
   mkdir $mod_doc/bash_rsts_doc
 fi
 
+# fill up the two directories
 for file in ${scripts[@]}
 do
   verbose $file
@@ -203,7 +206,7 @@ do
      echo >> $mod_doc/$rst_name
   fi
   # guarantee doc and script in the hidden toc
-  if ! grep -q $plain_name $mod_doc/$rst_name
+  if ! grep -q bash_rsts_scripts/$plain_name $mod_doc/$rst_name
   then
      mapfile -t lines < <( grep -n ":hidden:" $mod_doc/$rst_name | \
                            cut -d ":" -f 1 )
