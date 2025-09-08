@@ -3,9 +3,10 @@
 # ----- definition of functions -----------------------------------------------
 print_help() {
 echo "
-Usage: pkgcreator -n name_of_newborn_pkg [-w workdir] [-v] [-h]
-
 Creates a new python package with the basic structure and files.
+
+  -n  <name_of_newborn_pkg>  name of the new package.
+  -w  <workdir=./>           working directory.
 
   -v  verbose.
   -h  prints this message.
@@ -17,11 +18,12 @@ exit 0
 # General variables
 name_of_newborn_pkg=""
 workdir="$PWD"
-
+authorname=""
 verbose='false'
-while getopts 'n:w:vh' flag;
+while getopts 'a:n:w:vh' flag;
 do
   case "${flag}" in
+    a) authorname=${OPTARG} ;;
     n) name_of_newborn_pkg=${OPTARG} ;;
     w) workdir=${OPTARG} ;;
 
@@ -31,23 +33,25 @@ do
   esac
 done
 
-# <TODO: change the following pkgdeveloper>
-source "$(myutils basics -path)" starter $verbose
+source "$(pkgdeveloper basics -path)" starter $verbose
 # --- pre-body checks ---------------------------------------------------------
-# [ -z "$name_of_newborn_pkg" ] && echo "what is the name of the new package? "
-#   && read name_of_newborn_pkg
-# [ -z "$name_of_newborn_pkg" ] && fail "you must provide a name for the new
-#   package"
-# 
-# if [ -d "$name_of_newborn_pkg/$name_of_newborn_pkg" ]
-# then
-#   fail "the package $name_of_newborn_pkg already exists in $workdir"
-# fi
+[ -z "$name_of_newborn_pkg" ] && echo "what is the name of the new package? " \
+  && read name_of_newborn_pkg
+[ -z "$name_of_newborn_pkg" ] && fail "you must provide a name for the new
+   package"
+
+if [ -d "$name_of_newborn_pkg/$name_of_newborn_pkg" ]
+then
+  fail "The package $name_of_newborn_pkg already exists in $workdir"
+fi
+
+[ -z "$authorname" ] && echo "what is the author name? " && read authorname
+[ -z "$authorname" ] && fail "you must provide an author name"
 # ---- BODY -------------------------------------------------------------------
 
 #cd $workdir
-#mkdir $name_of_newborn_pkg
-#cd $name_of_newborn_pkg
+mkdir $name_of_newborn_pkg
+cd $name_of_newborn_pkg
 cat << EOF > README.md 
 # $name_of_newborn_pkg
 
@@ -91,10 +95,18 @@ build-backend = "setuptools.build_meta"
 EOF
 
 # cli directory
-
 mkdir -p src/$name_of_newborn_pkg/cli
 touch src/$name_of_newborn_pkg/cli/__init__.py
-#cp $(myutils )
+pkgdeveloper generate_main -n $name_of_newborn_pkg -w src/$name_of_newborn_pkg
+
+# documentation directory
+
+
+pkgdeveloper files_tree ../src/$name_of_newborn_pkg $name_of_newborn_pkg \
+  >> index.rst
+
+
+
 
 # test directory
 mkdir -p tests  
