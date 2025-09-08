@@ -196,6 +196,7 @@ do
                           cut -d ":" -f 1 )
     sed -i "$(( ${lines[0]} + 2 ))a \ \ \ ${rst_name%.rst}" $mod_doc/$pkg_name.rst
   fi
+
   # add hidden toc
   if ! grep -q ":hidden:" $mod_doc/$rst_name
   then
@@ -206,7 +207,7 @@ do
      echo >> $mod_doc/$rst_name
   fi
   # guarantee doc and script in the hidden toc
-  if ! grep -q bash_rsts_scripts/$plain_name $mod_doc/$rst_name
+  if ! grep -q $plain_name $mod_doc/$rst_name
   then
      mapfile -t lines < <( grep -n ":hidden:" $mod_doc/$rst_name | \
                            cut -d ":" -f 1 )
