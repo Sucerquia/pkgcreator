@@ -207,12 +207,11 @@ do
      echo >> $mod_doc/$rst_name
   fi
   # guarantee doc and script in the hidden toc
-  if ! grep -q $plain_name $mod_doc/$rst_name
+  if ! grep -q "bash_rsts_scripts/$plain_name" $mod_doc/$rst_name
   then
      mapfile -t lines < <( grep -n ":hidden:" $mod_doc/$rst_name | \
                            cut -d ":" -f 1 )
      sed -i "$(( ${lines[0]} + 1 ))a \ \ \ bash_rsts_scripts/$plain_name" $mod_doc/$rst_name
-     sed -i "$(( ${lines[0]} + 1 ))a \ \ \ bash_rsts_doc/$plain_name" $mod_doc/$rst_name
   fi
   
   # Insert block
