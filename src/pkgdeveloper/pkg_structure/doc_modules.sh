@@ -217,7 +217,10 @@ do
   # Insert block
   if ! grep -q ".. include:: bash_rsts_doc/$plain_name.rst" $mod_doc/$rst_name
   then
-    { echo ; echo ;
+    ref_name=${rst_name%.rst}-$plain_name
+    ref_name=${ref_name//_/-}
+    ref_name=${ref_name//\./-}
+    { echo ; echo ".. _$ref_name:" ; echo ;
       echo ".. include:: bash_rsts_doc/$plain_name.rst" ;
     } >> $mod_doc/$rst_name 
   fi
