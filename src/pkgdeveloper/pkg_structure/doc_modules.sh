@@ -97,6 +97,8 @@ then
 fi
 
 source "$(pkgdeveloper basics -path)" BasicModDoc "$verbose"
+verbose -t "Package name: $pkg_name, doc path: $mod_doc, relative path:
+            $relative_path"
 
 # absolute to the dir with the files to be documented
 mod_path="$mod_doc/$relative_path"
@@ -110,8 +112,8 @@ mod_path="$mod_doc/$relative_path"
                     
 
 # Checks and corrects the documentation on the scripts.
-adjust "It is recommended to use pkgdeveloper add_python_doc first in order to" \
-        "have a complete documentation."
+warning "It is recommended to use pkgdeveloper add_python_doc first in order" \
+        "to have a complete documentation."
 
 # directories to be ignore during the check.
 mapfile -t ignore_dirs < <(echo "$raw_ign_dirs" | tr ',' '\n')
@@ -226,9 +228,35 @@ do
   fi
 done
 
-cd $original_bash_blocks
 
-# TODO: add section to checkback, namely, look at modules that there is not extra
-# unnecessary files that are not in the source directory
+for rstbash_file in $(ls $mod_doc/bash_rsts_scripts)
+do
+  mod=${rstbash_file%.rst}
+  if ! find . -name "$mod.sh"
+  then
+    warning "$mod.sh exists in your documentation but not in your package. The
+      next warnings tell you what you should do."
+    
+    warning "remove $rstbash_file from $mod_doc/bash_rsts_scripts and verify
+      that it does not exist in $mod_doc/bash_rsts_doc"
+
+    containers=$(grep -r bash_rsts_doc/"$mod.sh"})
+    if [ ! -z "$containers" ]
+    then
+      warning "remove bash_rsts_doc/"$mod.sh" and the corresponding
+        reference line just before from: ${containers[@]}"  
+    fi
+
+    containers=$(grep -r bash_rsts_scripts/"$mod.sh"})
+    if [ ! -z "$containers" ]
+    then
+      warning "remove bash_rsts_scripts/"$mod.sh" and the corresponding
+        reference line just before from: ${containers[@]}"  
+    fi
+  fi 
+
+done
+
+cd $original_bash_blocks
 
 finish

@@ -11,7 +11,8 @@ before to be defined and all the sh files. It also adds keywords like path or
 documentation.
 
   -n  <name_of_pkg=pkgdeveloper>  name of the package.
-  -w  <src_dir=./> source directory of the package.
+  -w  <src_dir=./> source directory of the package where 'cli' directory must
+      exist.
 
   -h  prints this message.
 "
