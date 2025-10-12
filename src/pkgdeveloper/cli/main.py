@@ -43,8 +43,8 @@ def output_terminal(cmd, print_output=True, skip_error=False, print_cmd=False,
         output = p.stdout.readline()
         if output:
             out += output
-            if print_output and len(output.strip()) != 0:
-                print(output.strip())
+            if print_output:
+                print(output, end="")
     return_code = p.wait()
 
     if not skip_error:
@@ -56,9 +56,6 @@ def output_terminal(cmd, print_output=True, skip_error=False, print_cmd=False,
 
 
 pymodules = {
-    'function_doc': 'pkgdeveloper.pkg_structure.documentation_tools',
-    'args_and_defaults': 'pkgdeveloper.pkg_structure.documentation_tools',
-    'methods_in_class': 'pkgdeveloper.pkg_structure.documentation_tools',
     'function_doc': 'pkgdeveloper.pkg_structure.documentation_tools',
     'args_and_defaults': 'pkgdeveloper.pkg_structure.documentation_tools',
     'methods_in_class': 'pkgdeveloper.pkg_structure.documentation_tools',
@@ -82,18 +79,6 @@ sh_executers = {
     'single_g09': './bash_scripts/single_g09.sh',
     'find_blocks': './bash_scripts/find_blocks.sh',
     'bash-template': './bash_scripts/bash-template.sh',
-    'bash-template': './templates/bash-template.sh',
-    'python_doc_fixer': './pkg_structure/python_doc_fixer.sh',
-    'files_tree': './pkg_structure/files_tree.sh',
-    'doc_pythonfile': './pkg_structure/doc_pythonfile.sh',
-    'doc_modules': './pkg_structure/doc_modules.sh',
-    'check_tests': './pkg_structure/check_tests.sh',
-    'check_structure': './pkg_structure/check_structure.sh',
-    'bash_style': './pkg_structure/bash_style.sh',
-    'bash_basic_structure': './pkg_structure/bash_basic_structure.sh',
-    'add_python_doc': './pkg_structure/add_python_doc.sh',
-    'generate_main': './cli/generate_main.sh',
-    'basics': './basics.sh',
 }
 
 other_files = {

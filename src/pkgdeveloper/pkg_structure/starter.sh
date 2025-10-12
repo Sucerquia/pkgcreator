@@ -19,7 +19,7 @@ exit 0
 name_of_newborn_pkg=""
 workdir="$PWD"
 authorname=""
-verbose='false'
+verbose=''
 while getopts 'a:n:w:vh' flag;
 do
   case "${flag}" in
@@ -27,7 +27,7 @@ do
     n) name_of_newborn_pkg=${OPTARG} ;;
     w) workdir=${OPTARG} ;;
 
-    v) verbose='true' ;;
+    v) verbose='-v' ;;
     h) print_help ;;
     *) echo "for usage check: pkgcreator <function> -h" >&2 ; exit 1 ;;
   esac

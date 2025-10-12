@@ -73,7 +73,7 @@ pkg_name="pkgdeveloper"
 relative_path=""
 
 # ==== Costumer set up ========================================================
-verbose='true'
+verbose=''
 mod_doc="$(pkgdeveloper path)/../../doc/modules"
 while getopts 'd:f:m:n:p:vh' flag;
 do
@@ -84,7 +84,7 @@ do
     n) pkg_name=${OPTARG};;
     p) relative_path=${OPTARG};;
     
-    v) verbose='true' ;;
+    v) verbose='-v' ;;
     h) print_help ;;
     *) echo "for usage check: pkgdeveloper <function> -h" >&2 ; exit 1 ;;
   esac

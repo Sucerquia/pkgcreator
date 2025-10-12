@@ -16,12 +16,12 @@ exit 0
 # ----- definition of functions finishes --------------------------------------
 
 directory=""
-verbose='false'
+verbose=''
 while getopts 'd:vh' flag; do
   case "${flag}" in
     d) directory=${OPTARG};;
 
-    v)  verbose='true' ;;
+    v)  verbose='-v' ;;
     h) print_help ;;
     *) echo "for usage check: pkgdeveloper <function> -h" >&2 ; exit 1 ;;
   esac

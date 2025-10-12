@@ -33,7 +33,7 @@ starts="empty_starting_pattern"
 ends="empty_ending_pattern"
 index='false'
 output='output'
-verbose='false'
+verbose=''
 while getopts 'e:f:io:s:vh' flag;
 do
   case "${flag}" in
@@ -42,7 +42,7 @@ do
     i) index='true' ;;
     o) output="${OPTARG}" ;;
     s) starts="${OPTARG}" ;;
-    v) verbose='true' ;;
+    v) verbose='-v' ;;
 
     h) print_help ;;
     *) echo "for usage check: myutils <function> -h" >&2 ; exit 1 ;;

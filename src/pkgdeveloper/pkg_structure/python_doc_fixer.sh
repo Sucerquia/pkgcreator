@@ -22,7 +22,7 @@ exit 0
 spaces=0
 class=""
 function=""
-verbose='false'
+verbose=''
 while getopts 'c:f:m:s:vh' flag;
 do
   case "${flag}" in
@@ -31,7 +31,7 @@ do
     m) module=${OPTARG} ;;
     s) num_spaces=${OPTARG} ;;
 
-    v) verbose='true' ;;
+    v) verbose='-v' ;;
     h) print_help ;;
     *) echo "for usage check: pkgdeveloper <function> -h" >&2 ; exit 1 ;;
   esac

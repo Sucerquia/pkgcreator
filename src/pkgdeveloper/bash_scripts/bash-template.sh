@@ -27,14 +27,14 @@ exit 0
 # General variables
 def_var="inse here your default"
 cascade='false'
-verbose='false'
+verbose=''
 while getopts 'cd:vh' flag;
 do
   case "${flag}" in
     d) def_var=${OPTARG} ;;
     c) cascade='true' ;;
 
-    v) verbose='true' ;;
+    v) verbose='-v' ;;
     h) print_help ;;
     *) echo "for usage check: myutils <function> -h" >&2 ; exit 1 ;;
   esac

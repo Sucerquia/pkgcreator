@@ -20,7 +20,7 @@ workdir="$PWD"
 authorname=""
 def_var="inse here your default"
 cascade='false'
-verbose='false'
+verbose=''
 while getopts 'a:n:w:vh' flag;
 do
   case "${flag}" in
@@ -28,7 +28,7 @@ do
     n) name_of_pkg=${OPTARG} ;;
     w) workdir=${OPTARG} ;;
 
-    v) verbose='true' ;;
+    v) verbose='-v' ;;
     h) print_help ;;
     *) echo "for usage check: pkgdeveloper <function> -h" >&2 ; exit 1 ;;
   esac

@@ -59,7 +59,7 @@ raw_ign_fils='__init__.'
 pkg_name="pkgdeveloper"
 mod_path=$(pkgdeveloper path)
 # ==== Costumer set up ========================================================
-verbose='false'
+verbose=''
 while getopts 'd:f:m:n:p:vh' flag;
 do
   case "${flag}" in
@@ -68,7 +68,7 @@ do
     n) pkg_name=${OPTARG};;
     p) mod_path=${OPTARG};;
 
-    v) verbose='true' ;;
+    v) verbose='-v' ;;
     h) print_help ;;
     *) echo "for usage check: pkgdeveloper <function> -h" >&2 ; exit 1 ;;
   esac

@@ -14,7 +14,7 @@ exit 0
 }
 
 # ----- set up starts ---------------------------------------------------------
-verbose='false'
+verbose=''
 while getopts 'h' flag;
 do
   case "${flag}" in
@@ -39,7 +39,7 @@ do
   then
     grep -E -B 1 "h+[[:space:]]+prints this message" $file | head -n 1 | grep -qE "v+[[:space:]]+verbose" || inhelp='true'
     grep -q "vh' flag" $file || incase='true'
-    grep -q "verbose='true" $file || inflags='true'
+    grep -q "verbose='-v'" $file || inflags='true'
     grep -q "^verbose=" $file || defa='true'
     # <TODO: the next line should not be pkgdeveloper basics, but any script that sources it>
     grep "source" $file | grep "pkgdeveloper basics" | grep -q "\$verbose" || whencalling='true'
@@ -72,7 +72,7 @@ do
       then
         echo "OCHAS h) in $file"
       else
-        sed -i "${n}s/^/  v)  verbose='true' ;;\n/" $file
+        sed -i "${n}s/^/  v)  verbose='-v' ;;\n/" $file
       fi
     fi
 
@@ -84,7 +84,7 @@ do
       then
         echo "OCHAS defa $file"
       else
-        sed -i "${n}s/^/verbose='false'\n/" $file
+        sed -i "${n}s/^/verbose=''\n/" $file
       fi
     fi
 

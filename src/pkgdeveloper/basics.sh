@@ -38,11 +38,11 @@ done
 array_bfnames=( "$1" "${array_bfnames[@]}" )
 basic_functions_name=${array_bfnames[0]}
 
-if [ -z "$2" ] && [ "$2" != "true" ]
+if [ "$2" == "-v" ]
 then
-  eval "BASICVERBOSE_${basic_functions_name[0]}=false"
-else
   eval "BASICVERBOSE_${basic_functions_name[0]}=true"
+else
+  eval "BASICVERBOSE_${basic_functions_name[0]}=false"
 fi
 
 # ------ functions ------------------------------------------------------------
