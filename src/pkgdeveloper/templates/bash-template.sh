@@ -36,18 +36,18 @@ do
 
     v) verbose='-v' ;;
     h) print_help ;;
-    *) echo "for usage check: pkgdeveloper <function> -h" >&2 ; exit 1 ;;
+    *) echo "for usage check: <replace_pkgname> <function> -h" >&2 ; exit 1 ;;
   esac
 done
 
 source "$(pkgdeveloper basics -path)" Name_of_your_process $verbose
 
 # starting information
-verbose "JOB information"
-echo " * Date:"
-date
-echo " * Command:"
-echo "$0" "$@"
+verbose -t "JOB information"
+verbose -t " * Date:"
+verbose -t "$(date)"
+verbose -t " * Command:"
+verbose -t "$0" "$@"
 
 # load modules
 if $cascade
