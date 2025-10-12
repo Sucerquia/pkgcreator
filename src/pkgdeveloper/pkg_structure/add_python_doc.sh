@@ -115,7 +115,7 @@ do
     do
       echo $func
       # The output of the next function is stored in final_<func>_doc.txt
-      pkgdeveloper python_doc_fixer -f "$func" -m "$module" || \
+      pkgdeveloper python_doc_fixer -f "$func" -m "$module" >> /dev/null || \
         fail "creating new documentation"
       wait_until_next_file_exist final_-$func.txt
       # search n lines of the beginning of the function, the end of the
@@ -140,7 +140,7 @@ do
       # Documentation of the class definition
       class=${class%:}
       echo $class
-      pkgdeveloper python_doc_fixer -m $module -c $class || \
+      pkgdeveloper python_doc_fixer -m $module -c $class >> /dev/null || \
         fail "creating new documentation of $class"
       wait_until_next_file_exist final_$class-.txt
   
@@ -167,8 +167,9 @@ do
         tail -n +$(( n_class + 1 )) $fil > ${class}_complete_001.out
       else
         pkgdeveloper find_blocks -f $fil -s $(( n_class )) \
-                            -e $(( n_class + n_end_class - 1 )) \
-                            -i -o ${class}_complete || fail "finding the class"
+                                 -e $(( n_class + n_end_class - 1 )) \
+                                 -i -o ${class}_complete >> /dev/null \
+          || fail "finding the class"
       fi
       wait_until_next_file_exist ${class}_complete_001.out
 
@@ -178,7 +179,8 @@ do
       for method in ${methods[@]}
       do
         echo ${class}.$method
-        pkgdeveloper python_doc_fixer -m $module -c $class -f $method || \
+        pkgdeveloper python_doc_fixer -m $module -c $class -f $method \
+          >> /dev/null|| \
           fail "creating new documentation of $class.$method"
         rel_n_meth=$( grep -n "def $method(" ${class}_complete_001.out | \
                       cut -d ":" -f 1)
