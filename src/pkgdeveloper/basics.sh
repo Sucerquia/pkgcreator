@@ -41,7 +41,6 @@ do
   esac
 done
 
-
 # Definition functions and variables that are used along the whole package.
 
 # ------ variables ------------------------------------------------------------
@@ -69,12 +68,14 @@ adjust () {
 }
 
 adjust_text () {
-  text="$*"
+  echo
+  text="[ $(date +"%y.%m.%d-%H:%M") ] $*"
   nlines=$(( ${#text} / 80 ))
   for (( w=0; w<=nlines; w++ ))
   do
     echo "${text:$(( w * 79 )):79}"
   done
+  echo
 }
 
 # prints some text adjusted to 80 characters per line, filling empty spaces
@@ -97,6 +98,7 @@ verbose () {
 warning () {
   # shellcheck disable=SC2068
   adjust "WARNING" $@ "$( date )" >&2
+  adjust "WARNING" $@ "$( date )"
 }
 
 finish () {
