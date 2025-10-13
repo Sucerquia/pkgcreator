@@ -151,8 +151,8 @@ def main():
     # bash codes
     elif sys.argv[1] in sh_executers.keys():
         if '-path' in sys.argv[2:]:
-            path = str(Path(__file__).parent)[:-3] + \
-                    sh_executers[sys.argv[1]][2:]
+            path = (str(Path(__file__).parent)[:-3]
+                    + sh_executers[sys.argv[1]][2:])
             print(path)
         else:
             command = str(Path(__file__).parent)[:-3] + \
