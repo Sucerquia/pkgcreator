@@ -30,14 +30,6 @@ exit 0
 # ----- definition of functions finishes --------------------------------------
 
 # ==== Costumer set up ========================================================
-verbose=''
-while getopts 'h' flag;
-do
-    case "${flag}" in
-      h) print_help ;;
-    esac
-done
-
 # Function to recursively generate Mermaid nodes
 generate_tree() {
     local path="$1"
@@ -48,7 +40,6 @@ generate_tree() {
     # Add the current directory to the Mermaid graph
     if [[ "$parent" == "root" ]]
     then
-      # TODO: replace pkgdeveloper with any arbitrary name and the condition related with the indentation
       echo "${indent}${node_id}[\"$pkg_name\"]"
     else
       echo "${indent}${parent} --> ${node_id}[\"$(basename "$path")\"]"
@@ -67,28 +58,50 @@ generate_tree() {
     echo "${indent}click $node_id \"$link\" _self"
 
     # Iterate through subdirectories only
-    for child in "$path"/*; do
-        [ -d "$child" ] || continue # Skip files
-        # Skip directories matching ignore patterns
-        for pattern in "${IGNORE_PATTERNS[@]}"; do
-            if [[ "$(basename "$child")" == $pattern ]]; then
-                continue 2
-            fi
-        done
-        generate_tree "$child" "$node_id" "$indent  "
+    for child in "$path"/*;
+    do
+      [ -d "$child" ] || continue # Skip files
+      # Skip directories matching ignore patterns
+      for pattern in "${IGNORE_PATTERNS[@]}"; do
+        if [[ "$(basename "$child")" == $pattern ]]; then
+            continue 2
+        fi
+      done
+      generate_tree "$child" "$node_id" "$indent  "
     done
 }
 
-# Check if the user provided a directory path
-if [ $# -lt 2 ]; then
-    echo "Usage: $0 <directory-path> [ignore-pattern1 ignore-pattern2 ...]"
-    exit 1
+DIR_PATH=''
+pkg_name=''
+verbose=''
+while getopts 'd:i:n:vh' flag;
+do
+  case "${flag}" in
+    d) DIR_PATH=${OPTARG} ;;
+    i) ignore_patterns=${OPTARG};;
+    n) pkg_name=${OPTARG};;
+
+    v) verbose='-v' ;;
+    h) print_help ;;
+    *) echo "for usage check: pkgdeveloper <function> -h" >&2 ; exit 1 ;;
+  esac
+done
+
+source "$(pkgdeveloper basics -path)" FilesThree "$verbose"
+
+if [ -z $DIR_PATH ]
+then
+  DIR_PATH="$($pkg_name path)" || fail "could not determine the path to the
+                                        package. Use -d to set it up."
 fi
 
-DIR_PATH="$1"
-shift
-IGNORE_PATTERNS=("$@") # Remaining arguments are ignore patterns
+IGNORE_PATTERNS=( $( echo ${ignore_patterns//,/ } ) bash_rsts_doc
+                  bash_rsts_scripts )
 NODE_COUNTER=0
+
+cd $DIR_PATH
+DIR_PATH='.'
+
 
 # Start the RST file content
 echo ".. mermaid::"
