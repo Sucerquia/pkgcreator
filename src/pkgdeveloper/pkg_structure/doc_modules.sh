@@ -50,12 +50,13 @@ documentation of all classes and functions that finds in it.
 
    -d   <dir1,dir2...> directories to be ignored. Default: 'tests,cli'
    -f   <fil1,fil2...> files to be ignored. Default: '__init__'
-   -p   <relative_path> relative path directory to be checked. Relative in
-        respect to the directory that stores the modules documentation (see the
-        flag -m). Default=../../src/<name>, see flag -n
-   -m   <absolute_path> absolute path to the directory that stores the modules
-        documentation. Default: \$(pkgdeveloper path)/../../doc/modules
-   -n   <name> pakage name. Default: pkgdeveloper
+   -p   <relative_path="../../src/'name'/", where name is defined with '-n'>
+        relative path directory to be checked. Relative in respect to the
+        directory that stores the modules documentation (see the flag -m).
+   -m   <absolute_path=\$('name' path)/../../doc/modules, where name is defined
+        with '-n'> absolute path to the directory that stores the modules
+        documentation.
+   -n   <name> pakage name.
 
    -h   prints this message.
 "
@@ -74,7 +75,7 @@ relative_path=""
 
 # ==== Costumer set up ========================================================
 verbose=''
-mod_doc="$(pkgdeveloper path)/../../doc/modules"
+mod_doc=''
 while getopts 'd:f:m:n:p:vh' flag;
 do
   case "${flag}" in
@@ -91,9 +92,14 @@ do
 done
 
 # relative path to the dir with the files to be documented
-if [ ${#relative_path} -eq 0 ]
+if [ -z $relative_path ]
 then
   relative_path="../../src/$pkg_name/"
+fi
+
+if [ -z $mod_doc ]
+then
+  mod_doc=$($pkg_name path)
 fi
 
 source "$(pkgdeveloper basics -path)" BasicModDoc "$verbose"
@@ -112,8 +118,8 @@ mod_path="$mod_doc/$relative_path"
                     
 
 # Checks and corrects the documentation on the scripts.
-warning "It is recommended to use pkgdeveloper add_python_doc first in order" \
-        "to have a complete documentation."
+warning "It is recommended to use 'pkgdeveloper add_python_doc ...' first in" \
+        " order to have a complete documentation."
 
 # directories to be ignore during the check.
 mapfile -t ignore_dirs < <(echo "$raw_ign_dirs" | tr ',' '\n')
@@ -157,7 +163,7 @@ fi
 # fill up the two directories
 for file in ${scripts[@]}
 do
-  verbose $file
+  verbose -t $file
 
   path_bash=${file%/*}
   if [[ "$path_bash" == "." ]]
@@ -256,6 +262,9 @@ do
   fi 
 
 done
+
+verbose "TIP: you can use 'pkgdeveloper files_tree' to build a map of your
+        package structure and insert it in the index.rst file."
 
 cd $original_bash_blocks
 
