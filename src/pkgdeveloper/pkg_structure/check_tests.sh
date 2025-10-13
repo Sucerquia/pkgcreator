@@ -6,13 +6,13 @@ echo "
 Check that all scripts in a package are already tested. So far, only python and
 bash scripts are included. The output reports which functions/methods and are
 not tested or if the test file doesn't even exist. This is done assuming that
-the test of an <x_script.ext> is called <test_x_script.py>; same for methods
-and classes.
+the test of an <x_script.ext, where ext is 'sh' or 'py> is called
+<test_x_script.py>; same for methods and classes.
 
   -d  <ignore_dirs> directories to be ignored.
   -f  <ignore_files> files to be ignored.
   -p  <dir_path> Path to the package source to be analyzed.
-      Default: pkgdeveloper -path
+      Default: pkgdeveloper path
   -t  <test_directory> subdirectory of the package where tests are located.
       Default: test.
 
@@ -56,7 +56,7 @@ ignore_elements () {
 
 # ----- set up starts ---------------------------------------------------------
 # General variables
-test_directory='tests'
+test_directory='../../tests'
 original_cs=$(pwd)
 mod_path=""
 
@@ -77,12 +77,14 @@ done
 
 source "$(pkgdeveloper basics -path)" TestChecker $verbose
 
-if [[ "$mod_path" == "" ]]
+if [ -z "$mod_path" ]
 then
-  mod_path=$( pkgdeveloper path )
+  fail "package path not provided"
 fi
 
-verbose "Tests of $mod_path will be checked"
+verbose -t "This code Checks if .py and .sh files of '$mod_path' have a test \
+  in $mod_path/$test_directory"
+
 
 if [ ! -d "$mod_path/$test_directory" ];
 then
@@ -115,10 +117,12 @@ mapfile -t pkg_files < <( ignore_elements \
 
 with_test=( )
 without_test=( )
+
 cd $test_directory
 
 # the structure of package and tests must be the same
-adjust "Tests directories structure"
+verbose -t "Tests directories structure: If any of these directories do not \
+  exist in $mod_path/$test_directory, a warning will be issued."
 for dir in "${pkg_dirs[@]}"
 do
   [ -d "$dir" ] || warning "$dir does not exist in tests"
@@ -133,7 +137,7 @@ do
     [ -f "${file%/*}/test_${file##*/}" ] && \
       with_test+=( "$file" ) || \
       without_test+=( "$file" )
-  # Check if which sh files are tested already
+  # Check which sh files are tested already
   elif [ "$ext" == 'sh' ]
   then
     namefile="${file##*/}"
@@ -150,13 +154,26 @@ do
   fi
 done
 
-adjust "python functions"
+verbose -t "Python functions. If any python function is missing in the tests,
+  it will be listed below with the format <file>: <function>"
 
 for fil in "${with_test[@]}"
 do
-  mapfile -t functions < <(grep "def " "../$fil" | sed "s/ //g" | \
+  mapfile -t functions < <(grep "def " "$mod_path/$fil" | sed "s/ //g" | \
                            grep "^def" | cut -c4- | cut -d "(" -f 1 | \
                            grep -v "^_" )
+
+  mapfile -t duplicated < <(printf '%s\n' "${functions[@]}" | sort | uniq -d)
+  if [ "${#duplicated[@]}" -ne 0 ]
+  then
+    # TODO: improve this to check the tests of duplicated functions
+    warning "The following functions are duplicated in $fil, check_test is not
+      ready to deal with these cases yet:"
+    for func in "${duplicated[@]}"
+    do
+      echo "  $func"
+    done
+  fi
   lacked_funcs=( )
   for func in "${functions[@]}"
   do
@@ -171,43 +188,44 @@ do
     name=$( echo "$fil" | sed "s/^.\//$pkg_name\//g" )
     for func in "${lacked_funcs[@]}"
     do
-      echo "  $func"
+      echo "$fil: $func"
     done
   fi
 done
 
-adjust "python classes"
+verbose -t "Python classes. If any python class is missing in the tests, it
+  will be listed below with the format <file>: <class>"
+
 for fil in "${with_test[@]}"
 do
-  mapfile -t classes < <(grep "class " "../$fil" | sed "s/ //g" | \
+  mapfile -t classes < <(grep "class " "$mod_path/$fil" | sed "s/ //g" | \
                          grep "^class" | cut -c6- | cut -d ":" -f 1 | \
                          cut -d "(" -f 1 | grep -v "^_" )
-  [ "${#classes}" -eq 0 ]
-  lacked_funcs=( )
+  lacked_classes=( )
   for class in "${classes[@]}"
   do
     if [[ ! "$class" == "_"* ]]
     then
       [[ $( grep -c "def test_$class"  "${fil%/*}/test_${fil##*/}" ) -eq 0 ]] && \
-        lacked_funcs+=( "$func" )
+        lacked_classes+=( "$class" )
     fi
   done
-  if [ "${#lacked_funcs}" -ne 0 ]
+  if [ "${#lacked_classes[@]}" -ne 0 ]
   then
     name=$( echo "$class" | sed "s/^.\//$pkg_name\//g" )
-    for func in "${lacked_funcs[@]}"
+    for class in "${lacked_classes[@]}"
     do
-      echo "  $class"
+      echo "$fil: $class"
     done
   fi
 done
 
-adjust "NEXT FILES DO NOT HAVE A TEST (.\_/.)"
+verbose -t "THE NEXT FILES DO NOT HAVE A TEST (.\_/.)"
 
 for fil in "${without_test[@]}"
 do
   name=$( echo "$fil" | sed "s/^.\//$pkg_name\//g" )
-  echo "$name   "
+  echo "$fil"
 done
 
 cd $original_cs
