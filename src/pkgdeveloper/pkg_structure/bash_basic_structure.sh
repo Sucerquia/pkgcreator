@@ -51,7 +51,7 @@ do
       n=$(grep -n -E -B 1 "h+[[:space:]]+prints this message" $file | head -n 1 | cut -d "-" -f 1)
       if [ ${#n} -eq 0 ]
       then
-        echo "OCHAS inhelp in $file"
+        echo "ATTENTION inhelp in $file"
       else
         n=$(( n + 1 ))
         sed -i "${n}s/^/  -v  verbose.\n/" $file
@@ -70,7 +70,7 @@ do
       n=$(grep -n "h) print_help" $file | cut -d ":" -f 1)
       if [ ${#n} -eq 0 ]
       then
-        echo "OCHAS h) in $file"
+        echo "ATTENTION h) in $file"
       else
         sed -i "${n}s/^/  v)  verbose='-v' ;;\n/" $file
       fi
@@ -82,7 +82,7 @@ do
       n=$(grep -n "while getopts" $file | cut -d ":" -f 1)
       if [ ${#n} -eq 0 ]
       then
-        echo "OCHAS defa $file"
+        echo "ATTENTION defa $file"
       else
         sed -i "${n}s/^/verbose=''\n/" $file
       fi
@@ -93,7 +93,7 @@ do
       echo $file whencalling
       if [ ${#n} -eq 0 ]
       then
-        echo "OCHAS whenca $file"
+        echo "ATTENTION whenca $file"
       else
         n=$(grep -n "pkgdeveloper basics" $file | cut -d ":" -f 1)
       fi
