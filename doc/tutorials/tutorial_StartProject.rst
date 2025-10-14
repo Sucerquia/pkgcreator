@@ -1,0 +1,168 @@
+.. _tutorial-startproject:
+
+================================
+Creating and Improving a Package
+================================
+
+
+In this tutorial, you are going to learn how to use the tools in 'pkgdeveloper'
+to create a package from scratch, generate or improve documentation, use
+functions from the terminal, and some other useful features.
+
+------------------------------
+Create a Package from Scratch
+------------------------------
+
+Assume that you want to create a package called :code:`otto`. You can
+do this by running the following command in your terminal:
+
+.. code-block:: bash
+
+    pkgdeveloper starter -a "'Your Name'" -n "'otto'" -v
+
+This will create a directory called :code:`otto` in your current
+directory. From here, you are only one step away from having a working package.
+You just have to move into the package directory and find the 'TODO's and
+complete. To check it, do the following:
+
+.. code-block:: bash
+
+    cd otto
+    grep -r TODO
+
+You will see that, for example, README.md requites a short description of your
+and the file 'pyproject.toml' requires your email and a short description as
+well. Of course, you are free to add more information to the 'pyproject.toml'
+file.
+
+That's it! You have created your first package. You can install it using:
+
+.. code-block:: bash
+
+    pip install -e .
+
+.. note::
+
+  The flag :code:`-e` is optional. It allows you to install the package in
+  editable mode, which means that any change you make to the source code will
+  be reflected in the installed package without needing to reinstall it. if you
+  do not use this flag, you will need to reinstall the package every time you
+  make a change to the source code.
+
+From here on, you can create python and bash scripts and use them from the
+terminal as you are going to see in the next section. And just by creating and
+installing the package, you can use already some of the functionalities. For
+example:
+
+.. code-block:: bash
+
+    otto -h    # shows a description of the package 
+    otto doc   # opens a html documentation in your browser
+    otto path  # shows the absolute path of the package
+
+------------------
+Add Python Scripts
+------------------
+
+Assume that you want to add a python script called :code:`coolscript.py` to
+your package which contains a function called :code:`coolfunction` that prints
+some arguments that you give as an input. You can then move to
+:code:`src/otto` and add this script there:
+
+.. code-block:: python
+
+    # add2executable
+    def coolfunction(something: str,
+                     intigers_as_well: int = 2,
+                     even_lists: list = None):
+        print("Received values: ", something, intigers_as_well, even_lists)
+
+This allows you import :code:`coolfunction` from anywhere in your python
+scripts using:
+
+.. code-block:: python
+
+    from otto.coolscript import coolfunction
+
+    coolfunction("Klasse!", 3, [1, 2, 3])
+
+Also, you can execute this function from the terminal, because that we
+used the comment :code:`#add2executable`. You can do this by running the
+following command in your terminal:
+
+.. code-block:: bash
+
+    pkgdeveloper generate_main -n otto -v
+    otto coolfunction "Klasse!" --intigers_as_well "3" --even_lists "[1,2,3]"
+
+you can see all the functions that you can execute from the terminal by
+running:    
+
+.. code-block:: bash
+
+    otto -h
+
+And to see how to use each function, you can run, for example:
+
+.. code-block:: bash
+
+    otto coolfunction -h
+
+If this command does not show any description, the function that you are
+calling does not have a docstring. You can add a docstring per the function
+editing the file where they are defined, or you can use the tool .
+
+.. code-block:: bash
+
+    pkgdeveloper add_python_doc -n otto -v
+
+if you run again the command to see the docstring (with -h flag), you will see
+many 'TODO's, which you can complete by editing the function's docstring. If
+you have many functions, that are checked at once, you can search all the TODO's
+in your package as shown before.
+
+----------------
+Add Bash Scripts
+----------------
+
+Now assume that you want to add a bash script called :code:`coolbash.sh` to
+your package which prints some arguments that you give as an input. You can
+then move to :code:`src/otto/` and add the script as you prefer, but
+:code:`pkgdeveloper` provides a template that you can use and guarantees that
+the script will work with the package. You can create the script using:
+
+
+.. code-block:: bash
+
+    pkgdeveloper empty_sh -n coolbash -p otto -v
+
+Again, you have to generate the main script again and then you can execute this
+script from the terminal. This is:
+
+.. code-block:: bash
+
+    pkgdeveloper generate_main -n otto -v
+    otto coolbash -h  # show the help message
+    otto coolbash -path  # show the path of the file
+    # Open the file and see that the template comes with the flags -d, -c and
+    # -v. Run the following command to see the differences
+    otto coolbash -d "input to variable"
+    otto coolbash -d "input to variable" -v
+    otto coolbash -d "input to variable" -c -v
+
+-------------------------------------------------
+Generate Documentation of Python and Bash Scripts
+-------------------------------------------------
+
+You can collect the documentation of all the functions in your package
+(including the bash scripts) and generate a html documentation using:
+
+.. code-block:: bash
+
+    pkgdeveloper doc_modules -n otto -v
+    otto doc  # opens the html documentation in your browser
+
+In this way all you scripts are well documented and you can reference them in
+different rst files. For example, add \:bashscript:`otto.coolbash`
+and \:func:`otto.coolscript.coolfunction` in your index.rst file. and run the
+last commands.
