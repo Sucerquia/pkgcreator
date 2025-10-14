@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creating and Improving a Package &mdash; pkgdeveloper  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Tutorials" href="tutorials.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pkgdeveloper
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../modules/pkgdeveloper.html">pkgdeveloper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/pkgdeveloper.html#basics">basics</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Creating and Improving a Package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-package-from-scratch">Create a Package from Scratch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-python-scripts">Add Python Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-bash-scripts">Add Bash Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-documentation-of-python-and-bash-scripts">Generate Documentation of Python and Bash Scripts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pkgdeveloper</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="tutorials.html">Tutorials</a></li>
+      <li class="breadcrumb-item active">Creating and Improving a Package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/tutorial_StartProject.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="creating-and-improving-a-package">
+<span id="tutorial-startproject"></span><h1>Creating and Improving a Package<a class="headerlink" href="#creating-and-improving-a-package" title="Link to this heading"></a></h1>
+<p>In this tutorial, you are going to learn how to use the tools in ‘pkgdeveloper’
+to create a package from scratch, generate or improve documentation, use
+functions from the terminal, and some other useful features.</p>
+<section id="create-a-package-from-scratch">
+<h2>Create a Package from Scratch<a class="headerlink" href="#create-a-package-from-scratch" title="Link to this heading"></a></h2>
+<p>Assume that you want to create a package called <code class="code docutils literal notranslate"><span class="pre">otto</span></code>. You can
+do this by running the following command in your terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pkgdeveloper<span class="w"> </span>starter<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;&#39;Your Name&#39;&quot;</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;&#39;otto&#39;&quot;</span><span class="w"> </span>-v
+</pre></div>
+</div>
+<p>This will create a directory called <code class="code docutils literal notranslate"><span class="pre">otto</span></code> in your current
+directory. From here, you are only one step away from having a working package.
+You just have to move into the package directory and find the ‘TODO’s and
+complete. To check it, do the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>otto
+grep<span class="w"> </span>-r<span class="w"> </span>TODO
+</pre></div>
+</div>
+<p>You will see that, for example, README.md requites a short description of your
+and the file ‘pyproject.toml’ requires your email and a short description as
+well. Of course, you are free to add more information to the ‘pyproject.toml’
+file.</p>
+<p>That’s it! You have created your first package. You can install it using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The flag <code class="code docutils literal notranslate"><span class="pre">-e</span></code> is optional. It allows you to install the package in
+editable mode, which means that any change you make to the source code will
+be reflected in the installed package without needing to reinstall it. if you
+do not use this flag, you will need to reinstall the package every time you
+make a change to the source code.</p>
+</div>
+<p>From here on, you can create python and bash scripts and use them from the
+terminal as you are going to see in the next section. And just by creating and
+installing the package, you can use already some of the functionalities. For
+example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>otto<span class="w"> </span>-h<span class="w">    </span><span class="c1"># shows a description of the package</span>
+otto<span class="w"> </span>doc<span class="w">   </span><span class="c1"># opens a html documentation in your browser</span>
+otto<span class="w"> </span>path<span class="w">  </span><span class="c1"># shows the absolute path of the package</span>
+</pre></div>
+</div>
+</section>
+<section id="add-python-scripts">
+<h2>Add Python Scripts<a class="headerlink" href="#add-python-scripts" title="Link to this heading"></a></h2>
+<p>Assume that you want to add a python script called <code class="code docutils literal notranslate"><span class="pre">coolscript.py</span></code> to
+your package which contains a function called <code class="code docutils literal notranslate"><span class="pre">coolfunction</span></code> that prints
+some arguments that you give as an input. You can then move to
+<code class="code docutils literal notranslate"><span class="pre">src/otto</span></code> and add this script there:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># add2executable</span>
+<span class="k">def</span> <span class="nf">coolfunction</span><span class="p">(</span><span class="n">something</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                 <span class="n">intigers_as_well</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+                 <span class="n">even_lists</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received values: &quot;</span><span class="p">,</span> <span class="n">something</span><span class="p">,</span> <span class="n">intigers_as_well</span><span class="p">,</span> <span class="n">even_a_lists</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This allows you import <code class="code docutils literal notranslate"><span class="pre">coolfunction</span></code> from anywhere in your python
+scripts using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">otto.coolscript</span> <span class="kn">import</span> <span class="n">coolfunction</span>
+
+<span class="n">coolfunction</span><span class="p">(</span><span class="s2">&quot;Klasse!&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Also, you can execute this function from the terminal, because that we
+used the comment <code class="code docutils literal notranslate"><span class="pre">#add2executable</span></code>. You can do this by running the
+following command in your terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pkgdeveloper<span class="w"> </span>generate_main<span class="w"> </span>-n<span class="w"> </span>otto<span class="w"> </span>-v
+otto<span class="w"> </span>coolfunction<span class="w"> </span><span class="s2">&quot;Klasse!&quot;</span><span class="w"> </span>--intigers_as_well<span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="w"> </span>--even_lists<span class="w"> </span><span class="s2">&quot;[1,2,3]&quot;</span>
+</pre></div>
+</div>
+<p>you can see all the functions that you can execute from the terminal by
+running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>otto<span class="w"> </span>-h
+</pre></div>
+</div>
+<p>And to see how to use each function, you can run, for example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>otto<span class="w"> </span>coolfunction<span class="w"> </span>-h
+</pre></div>
+</div>
+<p>If this command does not show any description, the function that you are
+calling does not have a docstring. You can add a docstring per the function
+editing the file where they are defined, or you can use the tool .</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pkgdeveloper<span class="w"> </span>add_python_doc<span class="w"> </span>-n<span class="w"> </span>otto<span class="w"> </span>-v
+</pre></div>
+</div>
+<p>if you run again the command to see the docstring (with -h flag), you will see
+many ‘TODO’s, which you can complete by editing the function’s docstring. If
+you have many functions, that are checked at once, you can search all the TODO’s
+in your package as shown before.</p>
+</section>
+<section id="add-bash-scripts">
+<h2>Add Bash Scripts<a class="headerlink" href="#add-bash-scripts" title="Link to this heading"></a></h2>
+<p>Now assume that you want to add a bash script called <code class="code docutils literal notranslate"><span class="pre">coolbash.sh</span></code> to
+your package which prints some arguments that you give as an input. You can
+then move to <code class="code docutils literal notranslate"><span class="pre">src/otto/</span></code> and add the script as you prefer, but
+<code class="code docutils literal notranslate"><span class="pre">pkgdeveloper</span></code> provides a template that you can use and guarantees that
+the script will work with the package. You can create the script using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pkgdeveloper<span class="w"> </span>empty_sh<span class="w"> </span>-n<span class="w"> </span>coolbash<span class="w"> </span>-p<span class="w"> </span>otto<span class="w"> </span>-v
+</pre></div>
+</div>
+<p>Again, you have to generate the main script again and then you can execute this
+script from the terminal. This is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pkgdeveloper<span class="w"> </span>generate_main<span class="w"> </span>-n<span class="w"> </span>otto<span class="w"> </span>-v
+otto<span class="w"> </span>coolbash<span class="w"> </span>-h<span class="w">  </span><span class="c1"># show the help message</span>
+otto<span class="w"> </span>coolbash<span class="w"> </span>-path<span class="w">  </span><span class="c1"># show the path of the file</span>
+<span class="c1"># Open the file and see that the template comes with the flags -d, -c and</span>
+<span class="c1"># -v. Run the following command to see the differences</span>
+otto<span class="w"> </span>coolbash<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;input to variable&quot;</span>
+otto<span class="w"> </span>coolbash<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;input to variable&quot;</span><span class="w"> </span>-v
+otto<span class="w"> </span>coolbash<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;input to variable&quot;</span><span class="w"> </span>-c<span class="w"> </span>-v
+</pre></div>
+</div>
+</section>
+<section id="generate-documentation-of-python-and-bash-scripts">
+<h2>Generate Documentation of Python and Bash Scripts<a class="headerlink" href="#generate-documentation-of-python-and-bash-scripts" title="Link to this heading"></a></h2>
+<p>You can collect the documentation of all the functions in your package
+(including the bash scripts) and generate a html documentation using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pkgdeveloper<span class="w"> </span>doc_modules<span class="w"> </span>-n<span class="w"> </span>otto<span class="w"> </span>-v
+otto<span class="w"> </span>doc<span class="w">  </span><span class="c1"># opens the html documentation in your browser</span>
+</pre></div>
+</div>
+<p>In this way all you scripts are well documented and you can reference them in
+different rst files. For example, add :bashscript:<cite>otto.stretching</cite>
+and :func:<cite>otto.coolfunction</cite> in your index.rst file. and run the
+last commands.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorials.html" class="btn btn-neutral float-left" title="Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Daniel Sucerquia.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

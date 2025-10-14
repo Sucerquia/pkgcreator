@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pkgdeveloper.pkg_structure &mdash; pkgdeveloper  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Script of pkgdeveloper start_doc" href="bash_rsts_scripts/start_doc.html" />
+    <link rel="prev" title="Script of pkgdeveloper single_g09" href="bash_rsts_scripts/single_g09.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pkgdeveloper
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="pkgdeveloper.html">pkgdeveloper</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pkgdeveloper.bash_scripts.html">pkgdeveloper.bash_scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pkgdeveloper.bash_scripts.html#single-g09">single_g09</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pkgdeveloper.bash_scripts.html#bash-template">bash-template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pkgdeveloper.bash_scripts.html#find-blocks">find_blocks</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pkgdeveloper.pkg_structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="bash_rsts_scripts/start_doc.html">Script of pkgdeveloper start_doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_rsts_scripts/bash_basic_structure.html">Script of pkgdeveloper bash_basic_structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_rsts_scripts/doc_pythonfile.html">Script of pkgdeveloper doc_pythonfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_rsts_scripts/python_doc_fixer.html">Script of pkgdeveloper python_doc_fixer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_rsts_scripts/check_structure.html">Script of pkgdeveloper check_structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_rsts_scripts/doc_modules.html">Script of pkgdeveloper doc_modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_rsts_scripts/starter.html">Script of pkgdeveloper starter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_rsts_scripts/bash_style.html">Script of pkgdeveloper bash_style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_rsts_scripts/add_python_doc.html">Script of pkgdeveloper add_python_doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_rsts_scripts/files_tree.html">Script of pkgdeveloper files_tree</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#files-tree">files_tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-python-doc">add_python_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bash-style">bash_style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#starter">starter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#doc-modules">doc_modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#check-structure">check_structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-doc-fixer">python_doc_fixer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#doc-pythonfile">doc_pythonfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bash-basic-structure">bash_basic_structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#start-doc">start_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pkgdeveloper.templates.html">pkgdeveloper.templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pkgdeveloper.templates.html#empty-sh">empty_sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pkgdeveloper.templates.html#bash-template">bash-template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash_rsts_scripts/basics.html">Script of pkgdeveloper basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pkgdeveloper.html#basics">basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Tutorials</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pkgdeveloper</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="pkgdeveloper.html">pkgdeveloper</a></li>
+      <li class="breadcrumb-item active">pkgdeveloper.pkg_structure</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/pkgdeveloper.pkg_structure.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pkgdeveloper-pkg-structure">
+<h1>pkgdeveloper.pkg_structure<a class="headerlink" href="#pkgdeveloper-pkg-structure" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="files-tree">
+<span id="pkgdeveloper-pkg-structure-files-tree"></span><h1>files_tree<a class="headerlink" href="#files-tree" title="Link to this heading"></a></h1>
+<div class="bash-script-title docutils container">
+<p><a class="reference internal" href="bash_rsts_scripts/files_tree.html#files-tree"><span class="std std-ref">[script]</span></a> <strong>pkgdeveloper/pkg_structure/files_tree.sh</strong></p>
+</div>
+<div class="bash-script-doc docutils container">
+<div class="line-block">
+<div class="line">Function that creates a mermaid map of a directory structure.</div>
+<div class="line"><br /></div>
+<div class="line-block">
+<div class="line">-d  &lt;path_directory&gt; path to the directory to be mapped. If not provided</div>
+<div class="line-block">
+<div class="line">$(package_name path), where package_name provided with -n is used.</div>
+</div>
+<div class="line">-i  &lt;ignoring_patterns=’’&gt; comma separated list of patterns to be ignored.</div>
+<div class="line">-n  &lt;package_name&gt; name of the package to be mapped. Used to determine</div>
+<div class="line-block">
+<div class="line">the path if -d is not provided.</div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="line">The output is the string that you have to locate in an rst file in order to</div>
+<div class="line">render your map. In principle, the output can be used in markdown files</div>
+<div class="line">changing the corresponding keywords.</div>
+<div class="line"><br /></div>
+<div class="line">Example of output in the case that the directory to be mapped contains the</div>
+<div class="line">subdirectories cli and pkg_structure and the pattern is ‘pkgdeveloper’:</div>
+<div class="line"><br /></div>
+<div class="line">.. mermaid::</div>
+<div class="line-block">
+<div class="line">:align: center</div>
+<div class="line"><br /></div>
+<div class="line">graph TD</div>
+<div class="line">node1[pkgdeveloper]</div>
+<div class="line">click node1 modules/pkgdeveloper.html _self</div>
+<div class="line-block">
+<div class="line">node1 –&gt; node2[cli]</div>
+<div class="line">click node2 modules/pkgdeveloper.cli.html _self</div>
+<div class="line">node1 –&gt; node3[pkg_structure]</div>
+<div class="line">click node3 modules/pkgdeveloper.pkg_structure.html _self</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="add-python-doc">
+<span id="pkgdeveloper-pkg-structure-add-python-doc"></span><h1>add_python_doc<a class="headerlink" href="#add-python-doc" title="Link to this heading"></a></h1>
+<div class="bash-script-title docutils container">
+<p><a class="reference internal" href="bash_rsts_scripts/add_python_doc.html#add-python-doc"><span class="std std-ref">[script]</span></a> <strong>pkgdeveloper/pkg_structure/add_python_doc.sh</strong></p>
+</div>
+<div class="bash-script-doc docutils container">
+<div class="line-block">
+<div class="line">Code that explores the files in the package and automatically creates the</div>
+<div class="line">documentation of all classes and functions that finds in it.</div>
+<div class="line"><br /></div>
+<div class="line-block">
+<div class="line">-d  &lt;dir1,dir2…&gt; directories to be ignored.</div>
+<div class="line-block">
+<div class="line">Default: ‘pycache,tests,tutorials,pre-deprected’</div>
+</div>
+<div class="line">-f  &lt;fil1,fil2…&gt; files to be ignored. Default: ‘__init__’</div>
+<div class="line">-n  &lt;name&gt; pkg name. Default: pkgdeveloper</div>
+<div class="line">-p  &lt;absolute_path&gt; path directory to be checked (no relative path).</div>
+<div class="line-block">
+<div class="line">Default: “$(&lt;name, check -n&gt; path)”</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">-v  verbose.</div>
+<div class="line">-h  prints this message.</div>
+</div>
+</div>
+</div>
+</section>
+<section id="bash-style">
+<span id="pkgdeveloper-pkg-structure-bash-style"></span><h1>bash_style<a class="headerlink" href="#bash-style" title="Link to this heading"></a></h1>
+<div class="bash-script-title docutils container">
+<p><a class="reference internal" href="bash_rsts_scripts/bash_style.html#bash-style"><span class="std std-ref">[script]</span></a> <strong>pkgdeveloper/pkg_structure/bash_style.sh</strong></p>
+</div>
+<div class="bash-script-doc docutils container">
+<div class="line-block">
+<div class="line">Check bash style of all bash files in a directory, and its subdirectories.</div>
+<div class="line"><br /></div>
+<div class="line-block">
+<div class="line">-d  directory containing the bash scripts. Default: “$pkgdeveloper -path”</div>
+<div class="line"><br /></div>
+<div class="line">-v  verbose.</div>
+<div class="line">-h  prints this message.</div>
+</div>
+</div>
+</div>
+</section>
+<section id="starter">
+<span id="pkgdeveloper-pkg-structure-starter"></span><h1>starter<a class="headerlink" href="#starter" title="Link to this heading"></a></h1>
+<div class="bash-script-title docutils container">
+<p><a class="reference internal" href="bash_rsts_scripts/starter.html#starter"><span class="std std-ref">[script]</span></a> <strong>pkgdeveloper/pkg_structure/starter.sh</strong></p>
+</div>
+<div class="bash-script-doc docutils container">
+<div class="line-block">
+<div class="line">Creates a new python package with the basic structure and files.</div>
+<div class="line"><br /></div>
+<div class="line-block">
+<div class="line">-n  &lt;name_of_newborn_pkg&gt;  name of the new package.</div>
+<div class="line">-w  &lt;workdir=./&gt;           working directory.</div>
+<div class="line"><br /></div>
+<div class="line">-v  verbose.</div>
+<div class="line">-h  prints this message.</div>
+</div>
+</div>
+</div>
+</section>
+<section id="doc-modules">
+<span id="pkgdeveloper-pkg-structure-doc-modules"></span><h1>doc_modules<a class="headerlink" href="#doc-modules" title="Link to this heading"></a></h1>
+<div class="bash-script-title docutils container">
+<p><a class="reference internal" href="bash_rsts_scripts/doc_modules.html#doc-modules"><span class="std std-ref">[script]</span></a> <strong>pkgdeveloper/pkg_structure/doc_modules.sh</strong></p>
+</div>
+<div class="bash-script-doc docutils container">
+<div class="line-block">
+<div class="line">Code that explores the files in the package and automatically create the</div>
+<div class="line">documentation of all classes and functions that finds in it.</div>
+<div class="line"><br /></div>
+<div class="line-block">
+<div class="line">-d   &lt;dir1,dir2…&gt; directories to be ignored. Default: ‘tests,cli’</div>
+<div class="line">-f   &lt;fil1,fil2…&gt; files to be ignored. Default: ‘__init__’</div>
+<div class="line">-p   &lt;relative_path=../../src/name/, where ‘name’ is defined with ‘-n’&gt;</div>
+<div class="line-block">
+<div class="line">relative path directory to be checked. Relative in respect to the</div>
+<div class="line">directory that stores the modules documentation (see the flag -m).</div>
+</div>
+<div class="line">-m   &lt;absolute_path=$(‘name’ path)/../../doc/modules, where name is defined</div>
+<div class="line-block">
+<div class="line">with ‘-n’&gt; absolute path to the directory that stores the modules</div>
+<div class="line">documentation.</div>
+</div>
+<div class="line">-n   &lt;name&gt; pakage name.</div>
+<div class="line"><br /></div>
+<div class="line">-h   prints this message.</div>
+</div>
+</div>
+</div>
+</section>
+<section id="check-structure">
+<span id="pkgdeveloper-pkg-structure-check-structure"></span><h1>check_structure<a class="headerlink" href="#check-structure" title="Link to this heading"></a></h1>
+<div class="bash-script-title docutils container">
+<p><a class="reference internal" href="bash_rsts_scripts/check_structure.html#check-structure"><span class="std std-ref">[script]</span></a> <strong>pkgdeveloper/pkg_structure/check_structure.sh</strong></p>
+</div>
+<div class="bash-script-doc docutils container">
+<div class="line-block">
+<div class="line">Check the structure of a package. All checkers run by default.</div>
+<div class="line"><br /></div>
+<div class="line-block">
+<div class="line">-d  src directory of the package. Defatul: “$pkgdeveloper -path”</div>
+<div class="line">-p  pep8 convention in all python scripts.</div>
+<div class="line">-s  ShellCheck in all bash scripts.</div>
+<div class="line">-t  check tests.</div>
+<div class="line"><br /></div>
+<div class="line">-h  prints this message.</div>
+</div>
+</div>
+</div>
+</section>
+<section id="python-doc-fixer">
+<span id="pkgdeveloper-pkg-structure-python-doc-fixer"></span><h1>python_doc_fixer<a class="headerlink" href="#python-doc-fixer" title="Link to this heading"></a></h1>
+<div class="bash-script-title docutils container">
+<p><a class="reference internal" href="bash_rsts_scripts/python_doc_fixer.html#python-doc-fixer"><span class="std std-ref">[script]</span></a> <strong>pkgdeveloper/pkg_structure/python_doc_fixer.sh</strong></p>
+</div>
+<div class="bash-script-doc docutils container">
+<div class="line-block">
+<div class="line">Code takes the documentation of a function and checks the documentation adding</div>
+<div class="line">TODOs in the missing parts. The output is stored in a file called</div>
+<div class="line">final_&lt;class&gt;-&lt;method&gt;_doc.txt</div>
+<div class="line"><br /></div>
+<div class="line-block">
+<div class="line">-c  &lt;class&gt; Class to be checked.</div>
+<div class="line">-f  &lt;method&gt; Function to be checked</div>
+<div class="line">-m  &lt;module&gt; Module that contains the function</div>
+<div class="line">-s  &lt;n_spaces&gt; number of leading spaces.</div>
+<div class="line"><br /></div>
+<div class="line">-v  verbose.</div>
+<div class="line">-h  prints this message.</div>
+</div>
+</div>
+</div>
+</section>
+<section id="doc-pythonfile">
+<span id="pkgdeveloper-pkg-structure-doc-pythonfile"></span><h1>doc_pythonfile<a class="headerlink" href="#doc-pythonfile" title="Link to this heading"></a></h1>
+<div class="bash-script-title docutils container">
+<p><a class="reference internal" href="bash_rsts_scripts/doc_pythonfile.html#doc-pythonfile"><span class="std std-ref">[script]</span></a> <strong>pkgdeveloper/pkg_structure/doc_pythonfile.sh</strong></p>
+</div>
+<div class="bash-script-doc docutils container">
+<div class="line-block">
+<div class="line">Code that automatically creates or update the ‘.rst’ file for the documentation</div>
+<div class="line">of all python classes and functions that finds in a python file. Also add the</div>
+<div class="line">file to &lt;path_to_doc&gt;/modules.rst if it does not exist.</div>
+<div class="line"><br /></div>
+<div class="line-block">
+<div class="line">-f  &lt;file&gt; file name with the stem relative to the directory that contains</div>
+<div class="line-block">
+<div class="line">all the python codes to be documented (pkg_path, see -p below).</div>
+</div>
+<div class="line">-m  &lt;mod_doc_path&gt; path to the directory that stores the modules</div>
+<div class="line-block">
+<div class="line">documentation.</div>
+</div>
+<div class="line">-n  &lt;pkg_name&gt; name of the package to be documented.</div>
+<div class="line">-p  &lt;pkg_path&gt; path to directory that contains all the python codes to be</div>
+<div class="line-block">
+<div class="line">documented. Usually src directory.</div>
+</div>
+<div class="line">-h  prints this message.</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">Note: This documentation is used in doc_modules.sh</div>
+</div>
+</div>
+</section>
+<section id="bash-basic-structure">
+<span id="pkgdeveloper-pkg-structure-bash-basic-structure"></span><h1>bash_basic_structure<a class="headerlink" href="#bash-basic-structure" title="Link to this heading"></a></h1>
+<div class="bash-script-title docutils container">
+<p><a class="reference internal" href="bash_rsts_scripts/bash_basic_structure.html#bash-basic-structure"><span class="std std-ref">[script]</span></a> <strong>pkgdeveloper/pkg_structure/bash_basic_structure.sh</strong></p>
+</div>
+<div class="bash-script-doc docutils container">
+<div class="line-block">
+<div class="line">Check the basic structure of all the given files as arguments.</div>
+<div class="line"><br /></div>
+<div class="line">It checks that all the bash scripts have flags support, verbose and help.</div>
+<div class="line"><br /></div>
+<div class="line-block">
+<div class="line">-v  verbose.</div>
+<div class="line">-c  run in a cluster.</div>
+</div>
+</div>
+</div>
+</section>
+<section id="start-doc">
+<span id="pkgdeveloper-pkg-structure-start-doc"></span><h1>start_doc<a class="headerlink" href="#start-doc" title="Link to this heading"></a></h1>
+<div class="bash-script-title docutils container">
+<p><a class="reference internal" href="bash_rsts_scripts/start_doc.html#start-doc"><span class="std std-ref">[script]</span></a> <strong>pkgdeveloper/pkg_structure/start_doc.sh</strong></p>
+</div>
+<div class="bash-script-doc docutils container">
+<div class="line-block">
+<div class="line">Creates the documentation of a package with python and bash codes.</div>
+<div class="line"><br /></div>
+<div class="line-block">
+<div class="line">-a  &lt;authorname&gt;            author name.</div>
+<div class="line">-n  &lt;name_of_pkg&gt;  name of the package.</div>
+<div class="line">-w  &lt;workdir=./&gt;   working directory.</div>
+<div class="line"><br /></div>
+<div class="line">-v  verbose.</div>
+<div class="line">-h  prints this message.</div>
+</div>
+</div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bash_rsts_scripts/single_g09.html" class="btn btn-neutral float-left" title="Script of pkgdeveloper single_g09" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bash_rsts_scripts/start_doc.html" class="btn btn-neutral float-right" title="Script of pkgdeveloper start_doc" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Daniel Sucerquia.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

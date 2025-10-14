@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Script of pkgdeveloper start_doc &mdash; pkgdeveloper  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Script of pkgdeveloper bash_basic_structure" href="bash_basic_structure.html" />
+    <link rel="prev" title="pkgdeveloper.pkg_structure" href="../pkgdeveloper.pkg_structure.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            pkgdeveloper
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../pkgdeveloper.html">pkgdeveloper</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.bash_scripts.html">pkgdeveloper.bash_scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.bash_scripts.html#single-g09">single_g09</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.bash_scripts.html#bash-template">bash-template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.bash_scripts.html#find-blocks">find_blocks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html">pkgdeveloper.pkg_structure</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Script of pkgdeveloper start_doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_basic_structure.html">Script of pkgdeveloper bash_basic_structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_pythonfile.html">Script of pkgdeveloper doc_pythonfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_doc_fixer.html">Script of pkgdeveloper python_doc_fixer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="check_structure.html">Script of pkgdeveloper check_structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_modules.html">Script of pkgdeveloper doc_modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="starter.html">Script of pkgdeveloper starter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_style.html">Script of pkgdeveloper bash_style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="add_python_doc.html">Script of pkgdeveloper add_python_doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files_tree.html">Script of pkgdeveloper files_tree</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#files-tree">files_tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#add-python-doc">add_python_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#bash-style">bash_style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#starter">starter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#doc-modules">doc_modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#check-structure">check_structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#python-doc-fixer">python_doc_fixer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#doc-pythonfile">doc_pythonfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#bash-basic-structure">bash_basic_structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#start-doc">start_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.templates.html">pkgdeveloper.templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.templates.html#empty-sh">empty_sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.templates.html#bash-template">bash-template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Script of pkgdeveloper basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pkgdeveloper.html#basics">basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/tutorials.html">Tutorials</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pkgdeveloper</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../pkgdeveloper.html">pkgdeveloper</a></li>
+          <li class="breadcrumb-item"><a href="../pkgdeveloper.pkg_structure.html">pkgdeveloper.pkg_structure</a></li>
+      <li class="breadcrumb-item active">Script of pkgdeveloper start_doc</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/modules/bash_rsts_scripts/start_doc.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="script-of-pkgdeveloper-start-doc">
+<span id="start-doc"></span><h1>Script of pkgdeveloper start_doc<a class="headerlink" href="#script-of-pkgdeveloper-start-doc" title="Link to this heading"></a></h1>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># ----- definition of functions -----------------------------------------------</span>
+print_help<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span>
+<span class="s2">Creates the documentation of a package with python and bash codes.</span>
+
+<span class="s2">  -a  &lt;authorname&gt;            author name.</span>
+<span class="s2">  -n  &lt;name_of_pkg&gt;  name of the package.</span>
+<span class="s2">  -w  &lt;workdir=./&gt;   working directory.</span>
+
+<span class="s2">  -v  verbose.</span>
+<span class="s2">  -h  prints this message.</span>
+<span class="s2">&quot;</span>
+<span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+<span class="o">}</span>
+
+<span class="c1"># ----- set up starts ---------------------------------------------------------</span>
+<span class="c1"># General variables</span>
+<span class="nv">name_of_pkg</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="nv">workdir</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PWD</span><span class="s2">&quot;</span>
+<span class="nv">authorname</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="nv">def_var</span><span class="o">=</span><span class="s2">&quot;inse here your default&quot;</span>
+<span class="nv">cascade</span><span class="o">=</span><span class="s1">&#39;false&#39;</span>
+<span class="nv">verbose</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="k">while</span><span class="w"> </span><span class="nb">getopts</span><span class="w"> </span><span class="s1">&#39;a:n:w:vh&#39;</span><span class="w"> </span>flag<span class="p">;</span>
+<span class="k">do</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">flag</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span>a<span class="o">)</span><span class="w"> </span><span class="nv">authorname</span><span class="o">=</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">    </span>n<span class="o">)</span><span class="w"> </span><span class="nv">name_of_pkg</span><span class="o">=</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">    </span>w<span class="o">)</span><span class="w"> </span><span class="nv">workdir</span><span class="o">=</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="w"> </span><span class="p">;;</span>
+
+<span class="w">    </span>v<span class="o">)</span><span class="w"> </span><span class="nv">verbose</span><span class="o">=</span><span class="s1">&#39;-v&#39;</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">    </span>h<span class="o">)</span><span class="w"> </span>print_help<span class="w"> </span><span class="p">;;</span>
+<span class="w">    </span>*<span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;for usage check: pkgdeveloper &lt;function&gt; -h&quot;</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">  </span><span class="k">esac</span>
+<span class="k">done</span>
+
+<span class="nb">source</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>pkgdeveloper<span class="w"> </span>basics<span class="w"> </span>-path<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>StartDocumentation<span class="w"> </span><span class="nv">$verbose</span>
+
+<span class="c1"># ---- BODY -------------------------------------------------------------------</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$workdir</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>fail<span class="w"> </span><span class="s2">&quot;moving to working directory&quot;</span>
+
+<span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$name_of_pkg</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;what is the name of the package? &quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                                 </span>name_of_pkg
+<span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$name_of_pkg</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>fail<span class="w"> </span><span class="s2">&quot;you must provide a name for the package&quot;</span>
+
+<span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$authorname</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;what is the author name? &quot;</span><span class="w"> </span>authorname
+<span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$authorname</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>fail<span class="w"> </span><span class="s2">&quot;you must provide an author name&quot;</span>
+
+which<span class="w"> </span>sphinx-quickstart<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span>fail<span class="w"> </span><span class="s2">&quot;sphinx-quickstart not found.</span>
+<span class="s2">  Please install Sphinx (e.g. pip install sphinx)&quot;</span>
+
+<span class="nv">ext</span><span class="o">=(</span><span class="w"> </span><span class="s2">&quot;sphinx.ext.autosummary&quot;</span>
+<span class="w">      </span><span class="s2">&quot;sphinx.ext.autodoc&quot;</span>
+<span class="w">      </span><span class="s2">&quot;sphinx.ext.viewcode&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span><span class="s2">&quot;sphinx.ext.napoleon&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span><span class="s2">&quot;sphinx.ext.intersphinx&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span><span class="s2">&quot;sphinx.ext.mathjax&quot;</span>
+<span class="w">      </span><span class="s2">&quot;sphinx.ext.githubpages&quot;</span><span class="w"> </span><span class="o">)</span>
+
+pip<span class="w"> </span>show<span class="w"> </span>sphinxcontrib-mermaid<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">ext</span><span class="o">+=(</span><span class="w"> </span>sphinxcontrib.mermaid<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="o">||</span><span class="w"> </span><span class="nv">missing_extensions</span><span class="o">+=(</span><span class="w"> </span><span class="nv">$extension</span><span class="w"> </span><span class="o">)</span>
+pip<span class="w"> </span>show<span class="w"> </span>sphinx_rtd_theme<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">ext</span><span class="o">+=(</span><span class="w"> </span>sphinx_rtd_theme<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="o">||</span><span class="w"> </span><span class="nv">missing_extensions</span><span class="o">+=(</span><span class="w"> </span><span class="nv">$extension</span><span class="w"> </span><span class="o">)</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="si">${#</span><span class="nv">missing_extensions</span><span class="p">[@]</span><span class="si">}</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">  </span>verbose<span class="w"> </span><span class="s2">&quot;The next extensions would improve your documentation:&quot;</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span>ext<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">missing_extensions</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="k">do</span>
+<span class="w">    </span>verbose<span class="w"> </span><span class="s2">&quot; - </span><span class="nv">$ext</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="k">done</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Do you want to stop this process and install them first? (y/n) &quot;</span>
+<span class="w">  </span><span class="nb">read</span><span class="w"> </span>answer
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$answer</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;y&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$answer</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Y&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="w">  </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="k">fi</span>
+
+mkdir<span class="w"> </span>-p<span class="w"> </span>doc
+<span class="nb">cd</span><span class="w"> </span>doc
+<span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>Makefile<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>fail<span class="w"> </span><span class="s2">&quot;documentation already exists&quot;</span>
+
+sphinx-quickstart<span class="w"> </span>--quiet<span class="w"> </span>--project<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$name_of_pkg</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                          </span>--author<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$authorname</span><span class="s2">&quot;</span>
+
+sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;/extensions =/c extensions = [&quot;</span><span class="w"> </span>conf.py
+<span class="nv">n</span><span class="o">=</span><span class="k">$(</span>grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;extensions = \[&quot;</span><span class="w"> </span>conf.py<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d:<span class="w"> </span>-f1<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="k">)</span>
+sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">n</span><span class="si">}</span><span class="s2">a \ \ ]&quot;</span><span class="w"> </span>conf.py
+verbose<span class="w"> </span><span class="s2">&quot;Adding the following extensions to conf.py:&quot;</span>
+<span class="k">for</span><span class="w"> </span>e<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="si">${</span><span class="nv">ext</span><span class="p">[@]</span><span class="si">}</span>
+<span class="k">do</span>
+<span class="w">  </span>verbose<span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot; - </span><span class="nv">$e</span><span class="s2">&quot;</span>
+<span class="w">  </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">n</span><span class="si">}</span><span class="s2">a \ \ &#39;</span><span class="nv">$e</span><span class="s2">&#39;,&quot;</span><span class="w"> </span>conf.py
+<span class="k">done</span>
+
+grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;sphinx_rtd_theme&quot;</span><span class="w"> </span>conf.py<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;html_theme = &#39;sphinx_rtd_theme&#39;&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>conf.py
+
+cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt;&gt; conf.py</span>
+
+<span class="s"># Add custom CSS file</span>
+<span class="s">html_css_files = [</span>
+<span class="s">    &#39;custom.css&#39;,  # Ensure the file path is correct</span>
+<span class="s">]</span>
+
+<span class="s">from docutils import nodes</span>
+<span class="s">from docutils.parsers.rst import roles</span>
+
+<span class="s">def bashscript_role(name, rawtext, text, lineno, inliner, options={}, content=[]):</span>
+<span class="s">    &quot;&quot;&quot;</span>
+<span class="s">    Custom role :bashscript:\`display &lt;target-label&gt;\` to render a boxed ref link.</span>
+<span class="s">    &quot;&quot;&quot;</span>
+<span class="s">    env = inliner.document.settings.env</span>
+
+<span class="s">    parts = text.split(&#39;.&#39;)</span>
+<span class="s">    target = &#39;modules/&#39; + &#39;.&#39;.join(parts[:-1])</span>
+<span class="s">    ref = &#39;#&#39; + text.replace(&#39;.&#39;, &#39;-&#39;)</span>
+<span class="s">    ref = ref.replace(&#39;_&#39;, &#39;-&#39;)</span>
+<span class="s">    display_text = text.replace(&#39;.&#39;, &#39;/&#39;) + &#39;.sh&#39;</span>
+
+
+<span class="s">    # Generate relative URI correctly using positional args</span>
+<span class="s">    refuri = env.app.builder.get_relative_uri(env.docname, target) + ref</span>
+
+<span class="s">    # Create reference node</span>
+<span class="s">    refnode = nodes.reference(rawtext, display_text, refuri=refuri)</span>
+<span class="s">    refnode[&#39;classes&#39;].append(&#39;bashscript&#39;)</span>
+
+<span class="s">    return [refnode], []</span>
+
+<span class="s"># Register the role</span>
+<span class="s">roles.register_local_role(&#39;bashscript&#39;, bashscript_role)</span>
+<span class="s">EOF</span>
+
+mkdir<span class="w"> </span>-p<span class="w"> </span>modules
+
+<span class="k">if</span><span class="w"> </span>which<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$name_of_pkg</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+<span class="k">then</span>
+<span class="w">  </span>pkgdeveloper<span class="w"> </span>add_python_doc<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$name_of_pkg</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                              </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/../src/</span><span class="nv">$name_of_pkg</span><span class="s2">/&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$verbose</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">||</span><span class="w"> </span>fail<span class="w"> </span><span class="s2">&quot;Issue running &#39;pkgdeveloper add_python_doc -n </span><span class="nv">$name_of_pkg</span>
+<span class="s2">         -p </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/../src/</span><span class="nv">$name_of_pkg</span><span class="s2">/&#39;&quot;</span>
+<span class="w">  </span>pkgdeveloper<span class="w"> </span>doc_modules<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$name_of_pkg</span><span class="s2">&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;../../src/</span><span class="nv">$name_of_pkg</span><span class="s2">/&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-m<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/modules&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$verbose</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>fail<span class="w"> </span><span class="s2">&quot;Issue running &#39;pkgdeveloper doc_modules -n </span><span class="nv">$name_of_pkg</span><span class="s2"> </span>
+<span class="s2">      -p ../../src/</span><span class="nv">$name_of_pkg</span><span class="s2">/&quot;</span>
+<span class="k">else</span>
+<span class="w">  </span>warning<span class="w"> </span><span class="s2">&quot;After installing the package and adding your scripts, consider to</span>
+<span class="s2">    use &#39;pkgdeveloper add_python_doc&#39; and &#39;pkgdeveloper doc_modules&#39;&quot;</span>
+<span class="k">fi</span>
+
+sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;/:caption: Contents:/ a \ \ \ modules\/</span><span class="nv">$name_of_pkg</span><span class="s2">&quot;</span><span class="w"> </span>index.rst
+sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;/modules\/</span><span class="nv">$name_of_pkg</span><span class="s2">/i \ &quot;</span><span class="w"> </span>index.rst
+
+mkdir<span class="w"> </span>-p<span class="w"> </span>_static
+
+cp<span class="w"> </span><span class="k">$(</span>pkgdeveloper<span class="w"> </span>path<span class="k">)</span>/templates/custom.css<span class="w"> </span>_static/
+
+
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$render</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nv">$pkg_name</span><span class="w"> </span>path<span class="k">)</span><span class="s2">/../../doc&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">  </span>verbose<span class="w"> </span><span class="s2">&quot;Rendering the documentation&quot;</span>
+<span class="w">  </span><span class="nb">cd</span><span class="w">  </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nv">$pkg_name</span><span class="w"> </span>path<span class="k">)</span><span class="s2">/../../doc&quot;</span>
+
+<span class="w">  </span>pip<span class="w"> </span>show<span class="w"> </span>sphinxcontrib-mermaid<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w">  </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>pkgdeveloper<span class="w"> </span>files_tree<span class="w"> </span>-d<span class="w"> </span>../src/<span class="nv">$name_of_pkg</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                            </span>-n<span class="w"> </span><span class="nv">$name_of_pkg</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                            </span>-i<span class="w"> </span><span class="s1">&#39;cli,__pycache__&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>flowchart.rst<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="se">\</span>
+<span class="o">}</span>
+<span class="w">  </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;flowchart.rst&quot;</span><span class="w"> </span>index.rst<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\n\n.. include:: flowchart.rst\n\n&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>index.rst<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
+<span class="w">  </span>make<span class="w"> </span>clean
+<span class="w">  </span>make<span class="w"> </span>html
+<span class="k">fi</span><span class="w"> </span>
+make<span class="w"> </span>html<span class="w"> </span><span class="o">||</span><span class="w"> </span>fail<span class="w"> </span><span class="s2">&quot;issue generating the html documentation&quot;</span>
+
+finish<span class="w"> </span><span class="s2">&quot;Documentation for </span><span class="nv">$name_of_pkg</span><span class="s2"> created in </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/_build/html&quot;</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../pkgdeveloper.pkg_structure.html" class="btn btn-neutral float-left" title="pkgdeveloper.pkg_structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bash_basic_structure.html" class="btn btn-neutral float-right" title="Script of pkgdeveloper bash_basic_structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Daniel Sucerquia.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

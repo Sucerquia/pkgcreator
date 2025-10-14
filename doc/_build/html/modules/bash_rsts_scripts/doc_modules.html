@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Script of pkgdeveloper doc_modules &mdash; pkgdeveloper  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Script of pkgdeveloper starter" href="starter.html" />
+    <link rel="prev" title="Script of pkgdeveloper check_structure" href="check_structure.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            pkgdeveloper
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../pkgdeveloper.html">pkgdeveloper</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.bash_scripts.html">pkgdeveloper.bash_scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.bash_scripts.html#single-g09">single_g09</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.bash_scripts.html#bash-template">bash-template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.bash_scripts.html#find-blocks">find_blocks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html">pkgdeveloper.pkg_structure</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="start_doc.html">Script of pkgdeveloper start_doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_basic_structure.html">Script of pkgdeveloper bash_basic_structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_pythonfile.html">Script of pkgdeveloper doc_pythonfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_doc_fixer.html">Script of pkgdeveloper python_doc_fixer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="check_structure.html">Script of pkgdeveloper check_structure</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Script of pkgdeveloper doc_modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="starter.html">Script of pkgdeveloper starter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_style.html">Script of pkgdeveloper bash_style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="add_python_doc.html">Script of pkgdeveloper add_python_doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files_tree.html">Script of pkgdeveloper files_tree</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#files-tree">files_tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#add-python-doc">add_python_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#bash-style">bash_style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#starter">starter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#doc-modules">doc_modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#check-structure">check_structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#python-doc-fixer">python_doc_fixer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#doc-pythonfile">doc_pythonfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#bash-basic-structure">bash_basic_structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#start-doc">start_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.templates.html">pkgdeveloper.templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.templates.html#empty-sh">empty_sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.templates.html#bash-template">bash-template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Script of pkgdeveloper basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pkgdeveloper.html#basics">basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/tutorials.html">Tutorials</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pkgdeveloper</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../pkgdeveloper.html">pkgdeveloper</a></li>
+          <li class="breadcrumb-item"><a href="../pkgdeveloper.pkg_structure.html">pkgdeveloper.pkg_structure</a></li>
+      <li class="breadcrumb-item active">Script of pkgdeveloper doc_modules</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/modules/bash_rsts_scripts/doc_modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="script-of-pkgdeveloper-doc-modules">
+<span id="doc-modules"></span><h1>Script of pkgdeveloper doc_modules<a class="headerlink" href="#script-of-pkgdeveloper-doc-modules" title="Link to this heading"></a></h1>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="nb">source</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>pkgdeveloper<span class="w"> </span>basics<span class="w"> </span>-path<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>BasicModDoc
+
+bash_help_block<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nv">file</span><span class="o">=</span><span class="nv">$2</span>
+<span class="w">  </span><span class="nv">tmp_name</span><span class="o">=</span><span class="si">${</span><span class="nv">file</span><span class="p">##*/</span><span class="si">}</span>
+<span class="w">  </span><span class="nv">plain_name</span><span class="o">=</span><span class="si">${</span><span class="nv">tmp_name</span><span class="p">%.sh</span><span class="si">}</span>
+
+<span class="w">  </span><span class="nv">script_title</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$plain_name</span><span class="s2">&quot;</span>
+
+<span class="w">  </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%0.s=&#39;</span><span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="si">${#</span><span class="nv">script_title</span><span class="si">}</span><span class="k">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$script_title</span>
+<span class="w">  </span><span class="o">{</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%0.s=&#39;</span><span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="si">${#</span><span class="nv">script_title</span><span class="si">}</span><span class="k">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
+<span class="w">  </span><span class="nb">echo</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;.. container:: bash-script-title&quot;</span>
+<span class="w">  </span><span class="nb">echo</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;   :ref:`[script] &lt;&#39;</span><span class="nv">$plain_name</span><span class="s1">&#39;&gt;` **&#39;</span><span class="nv">$1</span><span class="s1">&#39;**&#39;</span>
+<span class="w">  </span><span class="nb">echo</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;.. container:: bash-script-doc&quot;</span>
+<span class="w">  </span><span class="nb">echo</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;   .. line-block::&quot;</span>
+
+<span class="w">  </span><span class="nv">$2</span><span class="w"> </span>-h<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s2">&quot;s/^/      /g&quot;</span>
+<span class="o">}</span>
+
+create_bashscript_rst<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">doc_path</span><span class="o">=</span><span class="nv">$1</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">rel_path</span><span class="o">=</span><span class="nv">$2</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">file</span><span class="o">=</span><span class="nv">$3</span>
+
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">tmp_name</span><span class="o">=</span><span class="si">${</span><span class="nv">file</span><span class="p">##*/</span><span class="si">}</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">plain_name</span><span class="o">=</span><span class="si">${</span><span class="nv">tmp_name</span><span class="p">%.sh</span><span class="si">}</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">rst_name</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$doc_path</span><span class="s2">/bash_rsts_scripts/</span><span class="nv">$plain_name</span><span class="s2">.rst&quot;</span>
+
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;.. _</span><span class="nv">$plain_name</span><span class="s2">:&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$rst_name</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$rst_name</span>
+<span class="w">  </span><span class="nv">script_title</span><span class="o">=</span><span class="s2">&quot;Script of </span><span class="nv">$pkg_name</span><span class="s2"> </span><span class="nv">$plain_name</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%0.s=&#39;</span><span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="si">${#</span><span class="nv">script_title</span><span class="si">}</span><span class="k">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">}</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$rst_name</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$script_title</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$rst_name</span>
+<span class="w">  </span><span class="o">{</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%0.s=&#39;</span><span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="si">${#</span><span class="nv">script_title</span><span class="si">}</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">}</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$rst_name</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;.. literalinclude:: ../</span><span class="nv">$rel_path</span><span class="s2">/</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$rst_name</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;   :language: bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$rst_name</span>
+<span class="o">}</span>
+
+print_help<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span>
+<span class="s2">Code that explores the files in the package and automatically create the</span>
+<span class="s2">documentation of all classes and functions that finds in it.</span>
+
+<span class="s2">   -d   &lt;dir1,dir2...&gt; directories to be ignored. Default: &#39;tests,cli&#39;</span>
+<span class="s2">   -f   &lt;fil1,fil2...&gt; files to be ignored. Default: &#39;__init__&#39;</span>
+<span class="s2">   -p   &lt;relative_path=&quot;</span>../../src/<span class="s1">&#39;name&#39;</span>/<span class="s2">&quot;, where &#39;name&#39; is defined with &#39;-n&#39;&gt;</span>
+<span class="s2">        relative path directory to be checked. Relative in respect to the</span>
+<span class="s2">        directory that stores the modules documentation (see the flag -m).</span>
+<span class="s2">   -m   &lt;absolute_path=\$(&#39;name&#39; path)/../../doc/modules, where name is defined</span>
+<span class="s2">        with &#39;-n&#39;&gt; absolute path to the directory that stores the modules</span>
+<span class="s2">        documentation.</span>
+<span class="s2">   -n   &lt;name&gt; pakage name.</span>
+
+<span class="s2">   -h   prints this message.</span>
+<span class="s2">&quot;</span>
+<span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+<span class="o">}</span>
+<span class="c1"># ----- definition of functions finishes --------------------------------------</span>
+
+<span class="c1"># ==== General variables ======================================================</span>
+<span class="c1"># directories to be ignored during documentation.</span>
+<span class="nv">raw_ign_dirs</span><span class="o">=</span><span class="s1">&#39;cli,tests,pycache&#39;</span>
+<span class="c1"># files to be ignored during the documentation.</span>
+<span class="nv">raw_ign_fils</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="nv">pkg_name</span><span class="o">=</span><span class="s2">&quot;pkgdeveloper&quot;</span>
+<span class="c1"># relative path to the dir with the files to be documented</span>
+<span class="nv">relative_path</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+
+<span class="c1"># ==== Costumer set up ========================================================</span>
+<span class="nv">verbose</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="nv">mod_doc</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="k">while</span><span class="w"> </span><span class="nb">getopts</span><span class="w"> </span><span class="s1">&#39;d:f:m:n:p:vh&#39;</span><span class="w"> </span>flag<span class="p">;</span>
+<span class="k">do</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">flag</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span>d<span class="o">)</span><span class="w"> </span><span class="nv">raw_ign_dirs</span><span class="o">=</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">    </span>f<span class="o">)</span><span class="w"> </span><span class="nv">raw_ign_fils</span><span class="o">=</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">    </span>m<span class="o">)</span><span class="w"> </span><span class="nv">mod_doc</span><span class="o">=</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="p">;;</span>
+<span class="w">    </span>n<span class="o">)</span><span class="w"> </span><span class="nv">pkg_name</span><span class="o">=</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="p">;;</span>
+<span class="w">    </span>p<span class="o">)</span><span class="w"> </span><span class="nv">relative_path</span><span class="o">=</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="p">;;</span>
+<span class="w">    </span>
+<span class="w">    </span>v<span class="o">)</span><span class="w"> </span><span class="nv">verbose</span><span class="o">=</span><span class="s1">&#39;-v&#39;</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">    </span>h<span class="o">)</span><span class="w"> </span>print_help<span class="w"> </span><span class="p">;;</span>
+<span class="w">    </span>*<span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;for usage check: pkgdeveloper &lt;function&gt; -h&quot;</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">  </span><span class="k">esac</span>
+<span class="k">done</span>
+
+<span class="c1"># relative path to the dir with the files to be documented</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="nv">$relative_path</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">  </span><span class="nv">relative_path</span><span class="o">=</span><span class="s2">&quot;../../src/</span><span class="nv">$pkg_name</span><span class="s2">/&quot;</span>
+<span class="k">fi</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="nv">$mod_doc</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">  </span><span class="nv">mod_doc</span><span class="o">=</span><span class="k">$(</span><span class="nv">$pkg_name</span><span class="w"> </span>path<span class="k">)</span>/../../doc/modules
+<span class="k">fi</span>
+
+<span class="nb">source</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>pkgdeveloper<span class="w"> </span>basics<span class="w"> </span>-path<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>BasicModDoc<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$verbose</span><span class="s2">&quot;</span>
+verbose<span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;Package name: </span><span class="nv">$pkg_name</span><span class="s2">, doc path: </span><span class="nv">$mod_doc</span><span class="s2">, relative path:</span>
+<span class="s2">            </span><span class="nv">$relative_path</span><span class="s2">&quot;</span>
+
+<span class="c1"># absolute to the dir with the files to be documented</span>
+<span class="nv">mod_path</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$mod_doc</span><span class="s2">/</span><span class="nv">$relative_path</span><span class="s2">&quot;</span>
+
+<span class="c1"># checks existence of paths</span>
+<span class="o">[</span><span class="w"> </span>-d<span class="w"> </span><span class="nv">$mod_doc</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>fail<span class="w"> </span><span class="s2">&quot;path to the documentation directory does not exist</span>
+<span class="s2">  (</span><span class="nv">$mod_doc</span><span class="s2">). Check the flag -m for more details&quot;</span>
+
+<span class="o">[</span><span class="w"> </span>-d<span class="w"> </span><span class="nv">$mod_path</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>fail<span class="w"> </span><span class="s2">&quot;path to the directory to be documented does not</span>
+<span class="s2">  exist (</span><span class="nv">$mod_path</span><span class="s2">). Check the flag -p for more details&quot;</span>
+<span class="w">                    </span>
+
+<span class="c1"># Checks and corrects the documentation on the scripts.</span>
+warning<span class="w"> </span><span class="s2">&quot;It is recommended to use &#39;pkgdeveloper add_python_doc ...&#39; first in&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span><span class="s2">&quot; order to have a complete documentation.&quot;</span>
+
+<span class="c1"># directories to be ignore during the check.</span>
+mapfile<span class="w"> </span>-t<span class="w"> </span>ignore_dirs<span class="w"> </span>&lt;<span class="w"> </span>&lt;<span class="o">(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$raw_ign_dirs</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="o">)</span>
+<span class="c1"># files to be ignore during the check.</span>
+mapfile<span class="w"> </span>-t<span class="w"> </span>ignore_files<span class="w"> </span>&lt;<span class="w"> </span>&lt;<span class="o">(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$raw_ign_fils</span><span class="s2">,</span><span class="nv">$raw_ign_dirs</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="o">)</span>
+
+
+<span class="c1"># Directories</span>
+<span class="nv">toignore</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="k">for</span><span class="w"> </span>ign_dir<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ignore_dirs</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">do</span>
+<span class="w">  </span><span class="nv">toignore</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$toignore</span><span class="s2"> </span><span class="nv">$mod_path</span><span class="s2">/</span><span class="nv">$ign_dir</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="nv">bool_ign</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$bool_ign</span><span class="s2"> -path &#39;*</span><span class="nv">$ign_dir</span><span class="s2">*&#39; -o&quot;</span>
+<span class="k">done</span>
+
+<span class="c1"># ==== BODY ===================================================================</span>
+<span class="c1"># python autodoc</span>
+sphinx-apidoc<span class="w"> </span>-ET<span class="w"> </span>-o<span class="w"> </span><span class="nv">$mod_doc</span><span class="w"> </span><span class="nv">$mod_path</span><span class="w"> </span><span class="si">${</span><span class="nv">toignore</span><span class="p">[@]</span><span class="si">}</span>
+
+
+<span class="c1"># Bash scripts: for each bash script it creates two files: one for the</span>
+<span class="c1"># file documentation (in bash_rsts_doc) and the other for the raw code (in</span>
+<span class="c1"># bash_rsts_scripts).</span>
+verbose<span class="w"> </span><span class="s2">&quot;bash scripts&quot;</span>
+
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$mod_path</span>
+mapfile<span class="w"> </span>-t<span class="w"> </span>scripts<span class="w"> </span>&lt;<span class="w"> </span>&lt;<span class="o">(</span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;find . -type f -not \(&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                       </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">bool_ign</span><span class="p">:</span><span class="k">:-</span><span class="nv">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;-prune \) -name &#39;*.sh&#39;&quot;</span><span class="w"> </span><span class="o">)</span>
+
+<span class="c1"># create directory for the raw scripts if it doesn&#39;t exist</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$mod_doc</span><span class="s2">/bash_rsts_scripts&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="si">${#</span><span class="nv">scripts</span><span class="p">[@]</span><span class="si">}</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">  </span>mkdir<span class="w"> </span><span class="nv">$mod_doc</span>/bash_rsts_scripts
+<span class="k">fi</span>
+
+<span class="c1"># create directory for the raw documentations if it doesn&#39;t exist</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$mod_doc</span><span class="s2">/bash_rsts_doc&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="si">${#</span><span class="nv">scripts</span><span class="p">[@]</span><span class="si">}</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">  </span>mkdir<span class="w"> </span><span class="nv">$mod_doc</span>/bash_rsts_doc
+<span class="k">fi</span>
+
+<span class="c1"># fill up the two directories</span>
+<span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="si">${</span><span class="nv">scripts</span><span class="p">[@]</span><span class="si">}</span>
+<span class="k">do</span>
+<span class="w">  </span>verbose<span class="w"> </span>-t<span class="w"> </span><span class="nv">$file</span>
+
+<span class="w">  </span><span class="nv">path_bash</span><span class="o">=</span><span class="si">${</span><span class="nv">file</span><span class="p">%/*</span><span class="si">}</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$path_bash</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;.&quot;</span><span class="w"> </span><span class="o">]]</span>
+<span class="w">  </span><span class="k">then</span>
+<span class="w">    </span><span class="nv">path_bash</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="k">fi</span>
+
+<span class="w">  </span><span class="nv">title_in_rst</span><span class="o">=</span><span class="si">${</span><span class="nv">file</span><span class="p">//</span><span class="se">\.\/</span><span class="p">/</span><span class="si">}</span>
+<span class="w">  </span><span class="nv">title_in_rst</span><span class="o">=</span><span class="nv">$pkg_name</span>/<span class="nv">$title_in_rst</span>
+
+<span class="w">  </span><span class="nv">rst_name</span><span class="o">=</span><span class="si">${</span><span class="nv">path_bash</span><span class="p">//</span><span class="se">\.\/</span><span class="p">/.</span><span class="si">}</span>
+<span class="w">  </span><span class="nv">rst_name</span><span class="o">=</span><span class="si">${</span><span class="nv">rst_name</span><span class="p">//</span><span class="se">\/</span><span class="p">/.</span><span class="si">}</span>
+<span class="w">  </span><span class="nv">rst_name</span><span class="o">=</span><span class="nv">$pkg_name</span><span class="si">${</span><span class="nv">rst_name</span><span class="si">}</span>.rst
+
+<span class="w">  </span><span class="nv">tmp_name</span><span class="o">=</span><span class="si">${</span><span class="nv">file</span><span class="p">##*/</span><span class="si">}</span>
+<span class="w">  </span><span class="nv">plain_name</span><span class="o">=</span><span class="si">${</span><span class="nv">tmp_name</span><span class="p">%.sh</span><span class="si">}</span>
+
+<span class="w">  </span><span class="c1"># Create documentation and script</span>
+<span class="w">  </span>bash_help_block<span class="w"> </span><span class="nv">$title_in_rst</span><span class="w"> </span><span class="nv">$file</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$mod_doc</span>/bash_rsts_doc/<span class="nv">$plain_name</span>.rst
+<span class="w">  </span>create_bashscript_rst<span class="w"> </span><span class="nv">$mod_doc</span><span class="w"> </span><span class="nv">$relative_path</span><span class="w"> </span><span class="nv">$file</span>
+
+<span class="w">  </span><span class="c1"># creates the rst of the stem</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$rst_name</span><span class="w"> </span><span class="o">]</span>
+<span class="w">  </span><span class="k">then</span>
+<span class="w">    </span>touch<span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$rst_name</span>
+<span class="w">    </span><span class="nb">echo</span>
+<span class="w">    </span><span class="nv">title</span><span class="o">=</span><span class="si">${</span><span class="nv">rst_name</span><span class="p">%.rst</span><span class="si">}</span>
+<span class="w">    </span><span class="o">{</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%0.s=&#39;</span><span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="si">${#</span><span class="nv">title</span><span class="si">}</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">}</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$rst_name</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$title</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$rst_name</span>
+<span class="w">    </span><span class="o">{</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%0.s=&#39;</span><span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="si">${#</span><span class="nv">title</span><span class="si">}</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">}</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$rst_name</span>
+<span class="w">  </span><span class="k">fi</span>
+
+<span class="w">  </span><span class="c1"># Adds stem to doc of package</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">rst_name</span><span class="p">%.rst</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$pkg_name</span>.rst
+<span class="w">  </span><span class="k">then</span>
+<span class="w">    </span><span class="c1"># Next line assumes that the first toctree is the main one</span>
+<span class="w">    </span>mapfile<span class="w"> </span>-t<span class="w"> </span>lines<span class="w"> </span>&lt;<span class="w"> </span>&lt;<span class="o">(</span><span class="w"> </span>grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;.. toctree::&quot;</span><span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$pkg_name</span>.rst<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                          </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;:&quot;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">)</span>
+<span class="w">    </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;</span><span class="k">$((</span><span class="w"> </span><span class="si">${</span><span class="nv">lines</span><span class="p">[0]</span><span class="si">}</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="k">))</span><span class="s2">a \ \ \ </span><span class="si">${</span><span class="nv">rst_name</span><span class="p">%.rst</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$pkg_name</span>.rst
+<span class="w">  </span><span class="k">fi</span>
+
+<span class="w">  </span><span class="c1"># add hidden toc</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;:hidden:&quot;</span><span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$rst_name</span>
+<span class="w">  </span><span class="k">then</span>
+<span class="w">     </span><span class="nb">echo</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$rst_name</span>
+<span class="w">     </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;.. toctree::&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$rst_name</span>
+<span class="w">     </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;   :hidden:&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$rst_name</span>
+<span class="w">     </span><span class="nb">echo</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$rst_name</span>
+<span class="w">     </span><span class="nb">echo</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$rst_name</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="w">  </span><span class="c1"># guarantee doc and script in the hidden toc</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;bash_rsts_scripts/</span><span class="nv">$plain_name</span><span class="s2">&quot;</span><span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$rst_name</span>
+<span class="w">  </span><span class="k">then</span>
+<span class="w">     </span>mapfile<span class="w"> </span>-t<span class="w"> </span>lines<span class="w"> </span>&lt;<span class="w"> </span>&lt;<span class="o">(</span><span class="w"> </span>grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;:hidden:&quot;</span><span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$rst_name</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                           </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;:&quot;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">)</span>
+<span class="w">     </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;</span><span class="k">$((</span><span class="w"> </span><span class="si">${</span><span class="nv">lines</span><span class="p">[0]</span><span class="si">}</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="k">))</span><span class="s2">a \ \ \ bash_rsts_scripts/</span><span class="nv">$plain_name</span><span class="s2">&quot;</span><span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$rst_name</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c1"># Insert block</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;.. include:: bash_rsts_doc/</span><span class="nv">$plain_name</span><span class="s2">.rst&quot;</span><span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$rst_name</span>
+<span class="w">  </span><span class="k">then</span>
+<span class="w">    </span><span class="nv">ref_name</span><span class="o">=</span><span class="si">${</span><span class="nv">rst_name</span><span class="p">%.rst</span><span class="si">}</span>-<span class="nv">$plain_name</span>
+<span class="w">    </span><span class="nv">ref_name</span><span class="o">=</span><span class="si">${</span><span class="nv">ref_name</span><span class="p">//_/-</span><span class="si">}</span>
+<span class="w">    </span><span class="nv">ref_name</span><span class="o">=</span><span class="si">${</span><span class="nv">ref_name</span><span class="p">//</span><span class="se">\.</span><span class="p">/-</span><span class="si">}</span>
+<span class="w">    </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;.. _</span><span class="nv">$ref_name</span><span class="s2">:&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="p">;</span>
+<span class="w">      </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;.. include:: bash_rsts_doc/</span><span class="nv">$plain_name</span><span class="s2">.rst&quot;</span><span class="w"> </span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$mod_doc</span>/<span class="nv">$rst_name</span><span class="w"> </span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="k">done</span>
+
+
+<span class="k">for</span><span class="w"> </span>rstbash_file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>ls<span class="w"> </span><span class="nv">$mod_doc</span>/bash_rsts_scripts<span class="k">)</span>
+<span class="k">do</span>
+<span class="w">  </span><span class="nv">mod</span><span class="o">=</span><span class="si">${</span><span class="nv">rstbash_file</span><span class="p">%.rst</span><span class="si">}</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$mod</span><span class="s2">.sh&quot;</span>
+<span class="w">  </span><span class="k">then</span>
+<span class="w">    </span>warning<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$mod</span><span class="s2">.sh exists in your documentation but not in your package. The</span>
+<span class="s2">      next warnings tell you what you should do.&quot;</span>
+<span class="w">    </span>
+<span class="w">    </span>warning<span class="w"> </span><span class="s2">&quot;remove </span><span class="nv">$rstbash_file</span><span class="s2"> from </span><span class="nv">$mod_doc</span><span class="s2">/bash_rsts_scripts and verify</span>
+<span class="s2">      that it does not exist in </span><span class="nv">$mod_doc</span><span class="s2">/bash_rsts_doc&quot;</span>
+
+<span class="w">    </span><span class="nv">containers</span><span class="o">=</span><span class="k">$(</span>grep<span class="w"> </span>-r<span class="w"> </span>bash_rsts_doc/<span class="s2">&quot;</span><span class="nv">$mod</span><span class="s2">.sh&quot;</span><span class="o">}</span><span class="k">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$containers</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">then</span>
+<span class="w">      </span>warning<span class="w"> </span><span class="s2">&quot;remove bash_rsts_doc/&quot;</span><span class="nv">$mod</span>.sh<span class="s2">&quot; and the corresponding</span>
+<span class="s2">        reference line just before from: </span><span class="si">${</span><span class="nv">containers</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">  </span>
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="nv">containers</span><span class="o">=</span><span class="k">$(</span>grep<span class="w"> </span>-r<span class="w"> </span>bash_rsts_scripts/<span class="s2">&quot;</span><span class="nv">$mod</span><span class="s2">.sh&quot;</span><span class="o">}</span><span class="k">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$containers</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">then</span>
+<span class="w">      </span>warning<span class="w"> </span><span class="s2">&quot;remove bash_rsts_scripts/&quot;</span><span class="nv">$mod</span>.sh<span class="s2">&quot; and the corresponding</span>
+<span class="s2">        reference line just before from: </span><span class="si">${</span><span class="nv">containers</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">  </span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="w">  </span><span class="k">fi</span><span class="w"> </span>
+
+<span class="k">done</span>
+
+verbose<span class="w"> </span><span class="s2">&quot;TIP: you can use &#39;pkgdeveloper files_tree&#39; to build a map of your</span>
+<span class="s2">        package structure and insert it in the index.rst file.&quot;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nv">$pkg_name</span><span class="w"> </span>path<span class="k">)</span><span class="s2">/../../doc&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">  </span>verbose<span class="w"> </span><span class="s2">&quot;Rendering the documentation&quot;</span>
+<span class="w">  </span><span class="nb">cd</span><span class="w">  </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nv">$pkg_name</span><span class="w"> </span>path<span class="k">)</span><span class="s2">/../../doc&quot;</span>
+
+<span class="w">  </span>pip<span class="w"> </span>show<span class="w"> </span>sphinxcontrib-mermaid<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w">  </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>pkgdeveloper<span class="w"> </span>files_tree<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$pkg_name</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                            </span>-i<span class="w"> </span><span class="s1">&#39;cli,__pycache__&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>flowchart.rst<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="se">\</span>
+<span class="o">}</span>
+<span class="w">  </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;flowchart.rst&quot;</span><span class="w"> </span>index.rst<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\nAdd the next text into index.rst if you want to add a flow&quot;</span><span class="se">\</span>
+<span class="w">      </span><span class="s2">&quot;chart of your package: &#39;.. include:: flowchart.rst&#39;\n&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
+<span class="w">  </span>make<span class="w"> </span>clean
+<span class="w">  </span>make<span class="w"> </span>html
+<span class="k">fi</span><span class="w"> </span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$original_bash_blocks</span>
+
+
+finish
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="check_structure.html" class="btn btn-neutral float-left" title="Script of pkgdeveloper check_structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="starter.html" class="btn btn-neutral float-right" title="Script of pkgdeveloper starter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Daniel Sucerquia.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

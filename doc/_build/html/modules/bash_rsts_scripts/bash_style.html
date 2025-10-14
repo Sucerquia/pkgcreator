@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Script of pkgdeveloper bash_style &mdash; pkgdeveloper  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Script of pkgdeveloper add_python_doc" href="add_python_doc.html" />
+    <link rel="prev" title="Script of pkgdeveloper starter" href="starter.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            pkgdeveloper
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../pkgdeveloper.html">pkgdeveloper</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.bash_scripts.html">pkgdeveloper.bash_scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.bash_scripts.html#single-g09">single_g09</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.bash_scripts.html#bash-template">bash-template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.bash_scripts.html#find-blocks">find_blocks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html">pkgdeveloper.pkg_structure</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="start_doc.html">Script of pkgdeveloper start_doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_basic_structure.html">Script of pkgdeveloper bash_basic_structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_pythonfile.html">Script of pkgdeveloper doc_pythonfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_doc_fixer.html">Script of pkgdeveloper python_doc_fixer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="check_structure.html">Script of pkgdeveloper check_structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_modules.html">Script of pkgdeveloper doc_modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="starter.html">Script of pkgdeveloper starter</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Script of pkgdeveloper bash_style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="add_python_doc.html">Script of pkgdeveloper add_python_doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files_tree.html">Script of pkgdeveloper files_tree</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#files-tree">files_tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#add-python-doc">add_python_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#bash-style">bash_style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#starter">starter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#doc-modules">doc_modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#check-structure">check_structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#python-doc-fixer">python_doc_fixer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#doc-pythonfile">doc_pythonfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#bash-basic-structure">bash_basic_structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.pkg_structure.html#start-doc">start_doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.templates.html">pkgdeveloper.templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.templates.html#empty-sh">empty_sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pkgdeveloper.templates.html#bash-template">bash-template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Script of pkgdeveloper basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pkgdeveloper.html#basics">basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/tutorials.html">Tutorials</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pkgdeveloper</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../pkgdeveloper.html">pkgdeveloper</a></li>
+          <li class="breadcrumb-item"><a href="../pkgdeveloper.pkg_structure.html">pkgdeveloper.pkg_structure</a></li>
+      <li class="breadcrumb-item active">Script of pkgdeveloper bash_style</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/modules/bash_rsts_scripts/bash_style.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="script-of-pkgdeveloper-bash-style">
+<span id="bash-style"></span><h1>Script of pkgdeveloper bash_style<a class="headerlink" href="#script-of-pkgdeveloper-bash-style" title="Link to this heading"></a></h1>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+
+<span class="c1"># ----- definition of functions -----------------------------------------------</span>
+print_help<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span>
+<span class="s2">Check bash style of all bash files in a directory, and its subdirectories.</span>
+
+<span class="s2">  -d  directory containing the bash scripts. Default: \&quot;\$pkgdeveloper -path\&quot;</span>
+
+<span class="s2">  -v  verbose.</span>
+<span class="s2">  -h  prints this message.</span>
+<span class="s2">&quot;</span>
+<span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+<span class="o">}</span>
+<span class="c1"># ----- definition of functions finishes --------------------------------------</span>
+
+<span class="nv">directory</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="nv">verbose</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="k">while</span><span class="w"> </span><span class="nb">getopts</span><span class="w"> </span><span class="s1">&#39;d:vh&#39;</span><span class="w"> </span>flag<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">flag</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span>d<span class="o">)</span><span class="w"> </span><span class="nv">directory</span><span class="o">=</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="p">;;</span>
+
+<span class="w">    </span>v<span class="o">)</span><span class="w">  </span><span class="nv">verbose</span><span class="o">=</span><span class="s1">&#39;-v&#39;</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">    </span>h<span class="o">)</span><span class="w"> </span>print_help<span class="w"> </span><span class="p">;;</span>
+<span class="w">    </span>*<span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;for usage check: pkgdeveloper &lt;function&gt; -h&quot;</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">  </span><span class="k">esac</span>
+<span class="k">done</span>
+<span class="nb">source</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>pkgdeveloper<span class="w"> </span>basics<span class="w"> </span>-path<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>BashChecker<span class="w"> </span><span class="nv">$verbose</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$directory</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">  </span><span class="nv">directory</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>pkgdeveloper<span class="w"> </span>path<span class="k">)</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+
+<span class="c1"># ---- BODY -------------------------------------------------------------------</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$directory</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>fail<span class="w"> </span><span class="s2">&quot;moving to package directory&quot;</span>
+
+mapfile<span class="w"> </span>-t<span class="w"> </span>bash_files<span class="w"> </span>&lt;<span class="w"> </span>&lt;<span class="o">(</span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.sh&quot;</span><span class="o">)</span>
+
+<span class="k">for</span><span class="w"> </span>fil<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">bash_files</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">do</span>
+<span class="w">  </span>shellcheck<span class="w"> </span>-e<span class="w"> </span>SC1090,SC2015<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fil</span><span class="s2">&quot;</span>
+<span class="k">done</span>
+
+<span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$bsoriginal_dir</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>fail<span class="w"> </span><span class="s2">&quot;original directory lost&quot;</span>
+
+finish
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="starter.html" class="btn btn-neutral float-left" title="Script of pkgdeveloper starter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="add_python_doc.html" class="btn btn-neutral float-right" title="Script of pkgdeveloper add_python_doc" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Daniel Sucerquia.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
