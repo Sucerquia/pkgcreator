@@ -34,24 +34,50 @@ do
 done
 
 source "$(pkgdeveloper basics -path)" starter $verbose
+missing_extensions=( )
+for extension in nbsphinx jupyter_sphinx ipython matplotlib sphinxcontrib-mermaid
+do
+  pip show $extension > /dev/null || missing_extensions+=( $extension )
+done
+
+if [ ${#missing_extensions[@]} -gt 0 ]
+then
+  verbose "The next extensions would improve your documentation:"
+  for ext in "${missing_extensions[@]}"
+  do
+    verbose " - $ext"
+  done
+  echo "Do you want to stop this process and install them first? (y/n) "
+  read answer
+  if [ "$answer" = "y" ] || [ "$answer" = "Y" ]
+  then
+    exit 1
+  fi
+fi
+
 # --- pre-body checks ---------------------------------------------------------
 [ -z "$name_of_newborn_pkg" ] && echo "what is the name of the new package? " \
   && read name_of_newborn_pkg
 [ -z "$name_of_newborn_pkg" ] && fail "you must provide a name for the new
    package"
 
-if [ -d "$name_of_newborn_pkg/$name_of_newborn_pkg" ]
+if [ -d "$workdir/$name_of_newborn_pkg" ]
 then
   fail "The package $name_of_newborn_pkg already exists in $workdir"
 fi
 
 [ -z "$authorname" ] && echo "what is the author name? " && read authorname
 [ -z "$authorname" ] && fail "you must provide an author name"
-# ---- BODY -------------------------------------------------------------------
 
-#cd $workdir
+verbose -t "Creating package $name_of_newborn_pkg in $workdir by the author
+  $authorname"
+# ---- BODY -------------------------------------------------------------------
+verbose -t "Create directory and move into it"
+cd $workdir
 mkdir $name_of_newborn_pkg
 cd $name_of_newborn_pkg
+
+verbose -t "Creating README.md and pyproject.toml"
 cat << EOF > README.md 
 # $name_of_newborn_pkg
 
@@ -66,7 +92,7 @@ description = "<TODO: add a short description>"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
-    { name = "<TODO: add authorname>", email = "<TODO: add e-mail>" }
+    { name = "$authorname", email = "<TODO: add e-mail>" }
 ]
 requires-python = ">=3.9"
 classifiers = [
@@ -94,20 +120,26 @@ build-backend = "setuptools.build_meta"
 
 EOF
 
+verbose -t "Creating src directory and package"
 # cli directory
 mkdir -p src/$name_of_newborn_pkg/cli
 touch src/$name_of_newborn_pkg/cli/__init__.py
-pkgdeveloper generate_main -n $name_of_newborn_pkg -w src/$name_of_newborn_pkg
+verbose -t "Create main.py with pkgdeveloper generate_main"
+pkgdeveloper generate_main -n "$name_of_newborn_pkg" \
+  -w src/"$name_of_newborn_pkg"/ \
+  "$verbose" || fail "Issue running 'pkgdeveloper generate_main -n
+    $name_of_newborn_pkg  -w src/$name_of_newborn_pkg/"
 
+verbose -t "Create documentation"
 # documentation directory
-
-
-pkgdeveloper files_tree ../src/$name_of_newborn_pkg $name_of_newborn_pkg \
-  >> index.rst
-
-
-
+pkgdeveloper start_doc -a "$authorname" \
+                       -n "$name_of_newborn_pkg" \
+                       "$verbose" || \
+  fail "Issue running 'pkgdeveloper start_doc -a $authorname
+    -n $name_of_newborn_pkg'" 
 
 # test directory
-mkdir -p tests  
+mkdir -p tests
+echo "[pytest]" > pytest.ini
+echo 'testpaths = "tests"' >> pytest.ini
 touch tests/__init__.py
