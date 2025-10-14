@@ -110,11 +110,11 @@ verbose -t "Package name: $pkg_name, doc path: $mod_doc, relative path:
 mod_path="$mod_doc/$relative_path"
 
 # checks existence of paths
-[ -d $mod_doc ] || fail "path to the documentation directory does not exist." \
-                        "Check the flag -m for more details"
+[ -d $mod_doc ] || fail "path to the documentation directory does not exist
+  ($mod_doc). Check the flag -m for more details"
 
-[ -d $mod_path ] || fail "path to the directory to be documented does not" \
-                         "exist. Check the flag -p for more details"
+[ -d $mod_path ] || fail "path to the directory to be documented does not
+  exist ($mod_path). Check the flag -p for more details"
                     
 
 # Checks and corrects the documentation on the scripts.
