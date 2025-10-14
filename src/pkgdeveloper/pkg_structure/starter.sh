@@ -72,10 +72,11 @@ fi
 verbose -t "Creating package $name_of_newborn_pkg in $workdir by the author
   $authorname"
 # ---- BODY -------------------------------------------------------------------
-verbose -t "Create directory and move into it"
+verbose -t "Creating directory and moving into it"
 cd $workdir
 mkdir $name_of_newborn_pkg
 cd $name_of_newborn_pkg
+
 
 verbose -t "Creating README.md and pyproject.toml"
 cat << EOF > README.md 
@@ -124,6 +125,8 @@ verbose -t "Creating src directory and package"
 # cli directory
 mkdir -p src/$name_of_newborn_pkg/cli
 touch src/$name_of_newborn_pkg/cli/__init__.py
+touch src/$name_of_newborn_pkg/__init__.py
+cp $(pkgdeveloper basics -path) src/$name_of_newborn_pkg/
 verbose -t "Create main.py with pkgdeveloper generate_main"
 pkgdeveloper generate_main -n "$name_of_newborn_pkg" \
   -w src/"$name_of_newborn_pkg"/ \
@@ -132,10 +135,10 @@ pkgdeveloper generate_main -n "$name_of_newborn_pkg" \
 
 verbose -t "Create documentation"
 # documentation directory
-pkgdeveloper start_doc -a "$authorname" \
+pkgdeveloper start_doc -a "'$authorname'" \
                        -n "$name_of_newborn_pkg" \
                        "$verbose" || \
-  fail "Issue running 'pkgdeveloper start_doc -a $authorname
+  fail "Issue running 'pkgdeveloper start_doc -a "$authorname"
     -n $name_of_newborn_pkg'" 
 
 # test directory

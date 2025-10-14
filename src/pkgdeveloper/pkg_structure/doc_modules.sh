@@ -50,7 +50,7 @@ documentation of all classes and functions that finds in it.
 
    -d   <dir1,dir2...> directories to be ignored. Default: 'tests,cli'
    -f   <fil1,fil2...> files to be ignored. Default: '__init__'
-   -p   <relative_path="../../src/'name'/", where name is defined with '-n'>
+   -p   <relative_path="../../src/'name'/", where 'name' is defined with '-n'>
         relative path directory to be checked. Relative in respect to the
         directory that stores the modules documentation (see the flag -m).
    -m   <absolute_path=\$('name' path)/../../doc/modules, where name is defined
@@ -66,7 +66,7 @@ exit 0
 
 # ==== General variables ======================================================
 # directories to be ignored during documentation.
-raw_ign_dirs='tests'
+raw_ign_dirs='cli,tests,pycache'
 # files to be ignored during the documentation.
 raw_ign_fils=''
 pkg_name="pkgdeveloper"
@@ -99,7 +99,7 @@ fi
 
 if [ -z $mod_doc ]
 then
-  mod_doc=$($pkg_name path)
+  mod_doc=$($pkg_name path)/../../doc/modules
 fi
 
 source "$(pkgdeveloper basics -path)" BasicModDoc "$verbose"
@@ -134,6 +134,7 @@ do
   toignore="$toignore $mod_path/$ign_dir"
   bool_ign="$bool_ign -path '*$ign_dir*' -o"
 done
+
 # ==== BODY ===================================================================
 # python autodoc
 sphinx-apidoc -ET -o $mod_doc $mod_path ${toignore[@]}
@@ -266,6 +267,22 @@ done
 verbose "TIP: you can use 'pkgdeveloper files_tree' to build a map of your
         package structure and insert it in the index.rst file."
 
+if [ -d "$($pkg_name path)/../../doc" ]
+then
+  verbose "Rendering the documentation"
+  cd  "$($pkg_name path)/../../doc"
+
+  pip show sphinxcontrib-mermaid > /dev/null  && { \
+    pkgdeveloper files_tree -n "$pkg_name" \
+                            -i 'cli,__pycache__' > flowchart.rst ; \
+}
+  grep -q "flowchart.rst" index.rst || { \
+    echo -e "\nAdd the next text into index.rst if you want to add a flow"\
+      "chart of your package: '.. include:: flowchart.rst'\n" ; }
+  make clean
+  make html
+fi 
 cd $original_bash_blocks
+
 
 finish

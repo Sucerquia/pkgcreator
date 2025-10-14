@@ -3,9 +3,11 @@
 # ----- definition of functions -----------------------------------------------
 print_help() {
 echo "
+Creates the documentation of a package with python and bash codes.
 
-  -n  <name_of_pkg>  name of the new package.
-  -w  <workdir=./>           working directory.
+  -a  <authorname>            author name.
+  -n  <name_of_pkg>  name of the package.
+  -w  <workdir=./>   working directory.
 
   -v  verbose.
   -h  prints this message.
@@ -49,17 +51,18 @@ cd $workdir || fail "moving to working directory"
 which sphinx-quickstart > /dev/null || fail "sphinx-quickstart not found.
   Please install Sphinx (e.g. pip install sphinx)"
 
-ext=( "sphinx.ext.viewcode" \
+ext=( "sphinx.ext.autosummary"
+      "sphinx.ext.autodoc"
+      "sphinx.ext.viewcode" \
       "sphinx.ext.napoleon" \
       "sphinx.ext.intersphinx" \
       "sphinx.ext.mathjax"
       "sphinx.ext.githubpages" )
-missing_extensions=( )
-for extension in nbsphinx jupyter_sphinx ipython matplotlib sphinxcontrib-mermaid
-do
-  pip show $extension > /dev/null && ext+=( $extension ) \
-    || missing_extensions+=( $extension )
-done
+
+pip show sphinxcontrib-mermaid > /dev/null && ext+=( sphinxcontrib.mermaid ) \
+  || missing_extensions+=( $extension )
+pip show sphinx_rtd_theme > /dev/null && ext+=( sphinx_rtd_theme ) \
+  || missing_extensions+=( $extension )
 
 if [ ${#missing_extensions[@]} -gt 0 ]
 then
@@ -92,6 +95,9 @@ do
   verbose -t " - $e"
   sed -i "${n}a \ \ '$e'," conf.py
 done
+
+grep -q "sphinx_rtd_theme" conf.py && \
+  echo "html_theme = 'sphinx_rtd_theme'" >> conf.py
 
 cat << EOF >> conf.py
 
@@ -131,14 +137,14 @@ EOF
 
 mkdir -p modules
 
-if [ which "$name_of_pkg" > /dev/null ]
+if which "$name_of_pkg" > /dev/null
 then
   pkgdeveloper add_python_doc -n "$name_of_pkg" \
-                              -p "$(pwd)/../src/$name_of_pkg/" \
+                              -p "$(pwd)/../src/$name_of_pkg/" "$verbose" \
     || fail "Issue running 'pkgdeveloper add_python_doc -n $name_of_pkg
          -p $(pwd)/../src/$name_of_pkg/'"
   pkgdeveloper doc_modules -n "$name_of_pkg" -p "../../src/$name_of_pkg/" \
-    -m "$(pwd)/modules" || \
+    -m "$(pwd)/modules" "$verbose" || \
     fail "Issue running 'pkgdeveloper doc_modules -n $name_of_pkg 
       -p ../../src/$name_of_pkg/"
 else
@@ -147,10 +153,28 @@ else
 fi
 
 sed -i "/:caption: Contents:/ a \ \ \ modules\/$name_of_pkg" index.rst
-
-pip show sphinxcontrib-mermaid > /dev/null  && pkgdeveloper files_tree \
-  -d ../src/$name_of_pkg -n $name_of_pkg >> index.rst
+sed -i "/modules\/$name_of_pkg/i \ " index.rst
 
 mkdir -p _static
 
-cp $(pkgdeveloper path)/../../doc/_static/custom.css _static/
+cp $(pkgdeveloper path)/templates/custom.css _static/
+
+
+if [ $render ] && [ -d "$($pkg_name path)/../../doc" ]
+then
+  verbose "Rendering the documentation"
+  cd  "$($pkg_name path)/../../doc"
+
+  pip show sphinxcontrib-mermaid > /dev/null  && { \
+    pkgdeveloper files_tree -d ../src/$name_of_pkg \
+                            -n $name_of_pkg \
+                            -i 'cli,__pycache__' > flowchart.rst ; \
+}
+  grep -q "flowchart.rst" index.rst || { \
+    echo -e "\n\n.. include:: flowchart.rst\n\n" >> index.rst ; }
+  make clean
+  make html
+fi 
+make html || fail "issue generating the html documentation"
+
+finish "Documentation for $name_of_pkg created in $(pwd)/_build/html"

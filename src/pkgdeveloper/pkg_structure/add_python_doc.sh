@@ -12,7 +12,7 @@ documentation of all classes and functions that finds in it.
   -f  <fil1,fil2...> files to be ignored. Default: '__init__'
   -n  <name> pkg name. Default: pkgdeveloper
   -p  <absolute_path> path directory to be checked (no relative path).
-      Default: \"\$pkgdeveloper path\"
+      Default: \"\$(<name, check -n> path)\"
 
   -v  verbose.
   -h  prints this message.
@@ -57,7 +57,7 @@ raw_ign_dirs='pycache,tests,ipynb_checkpoints,tutorials,pre-deprected'
 # files to be ignored during the documentation.
 raw_ign_fils='__init__.'
 pkg_name="pkgdeveloper"
-mod_path=$(pkgdeveloper path)
+mod_path=''
 # ==== Costumer set up ========================================================
 verbose=''
 while getopts 'd:f:m:n:p:vh' flag;
@@ -75,6 +75,8 @@ do
 done
 
 source "$(pkgdeveloper basics -path)" AddPythonDoc $verbose
+
+[ -z "$mod_path" ] && mod_path="$($pkg_name path)"
 
 mapfile -t ignore_dirs < <(echo "$raw_ign_dirs" | tr ',' '\n')
 # files to be ignore during the check.
