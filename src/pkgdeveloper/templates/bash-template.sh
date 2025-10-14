@@ -1,12 +1,9 @@
 #!/bin/bash
 
-#SBATCH -N 1                   # number of nodes
-#SBATCH -n 9
 #SBATCH --cpus-per-task=1
 #SBATCH -t 24:00:00
 #SBATCH --output=%x-%j.o
 #SBATCH --error=%x-%j.e
-#SBATCH --exclusive
 
 
 # ----- definition of functions -----------------------------------------------
@@ -25,7 +22,7 @@ exit 0
 
 # ----- set up starts ---------------------------------------------------------
 # General variables
-def_var="inse here your default"
+def_var="insert here your default"
 cascade='false'
 verbose=''
 while getopts 'cd:vh' flag;
@@ -40,7 +37,7 @@ do
   esac
 done
 
-source "$(pkgdeveloper basics -path)" Name_of_your_process $verbose
+source "$(<replace_pkgname> basics -path)" <function> $verbose
 
 # starting information
 verbose -t "JOB information"
@@ -53,8 +50,8 @@ verbose -t "$0" "$@"
 if $cascade
 then
   # Add flags to restart if necessary (and if you added a restart function before)
-  load_modules 
+  load_modules
 fi
 
 # ---- BODY -------------------------------------------------------------------
-finish "message to finish"
+finish "Message to finish (generated files, indications to proceed...)"

@@ -68,14 +68,12 @@ adjust () {
 }
 
 adjust_text () {
-  echo
   text="[ $(date +"%y.%m.%d-%H:%M") ] $*"
   nlines=$(( ${#text} / 80 ))
   for (( w=0; w<=nlines; w++ ))
   do
     echo "${text:$(( w * 79 )):79}"
   done
-  echo
 }
 
 # prints some text adjusted to 80 characters per line, filling empty spaces

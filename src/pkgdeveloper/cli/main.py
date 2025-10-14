@@ -62,6 +62,7 @@ pymodules = {
 }
 
 sh_executers = {
+    'empty_sh': './templates/empty_sh.sh',
     'bash-template': './templates/bash-template.sh',
     'starter': './pkg_structure/starter.sh',
     'start_doc': './pkg_structure/start_doc.sh',
@@ -83,6 +84,7 @@ sh_executers = {
 
 other_files = {
 }
+
 
 def _read_arguments():
     """
@@ -171,8 +173,8 @@ def main():
     # bash codes
     elif sys.argv[1] in sh_executers.keys():
         if '-path' in sys.argv[2:]:
-            path = str(Path(__file__).parent)[:-3] + \
-                    sh_executers[sys.argv[1]][2:]
+            path = (str(Path(__file__).parent)[:-3]
+                    + sh_executers[sys.argv[1]][2:])
             print(path)
         else:
             command = str(Path(__file__).parent)[:-3] + \

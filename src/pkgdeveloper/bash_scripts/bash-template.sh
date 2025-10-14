@@ -1,12 +1,9 @@
 #!/bin/bash
 
-#SBATCH -N 1                   # number of nodes
-#SBATCH -n 9
 #SBATCH --cpus-per-task=1
 #SBATCH -t 24:00:00
 #SBATCH --output=%x-%j.o
 #SBATCH --error=%x-%j.e
-#SBATCH --exclusive
 
 
 # ----- definition of functions -----------------------------------------------
@@ -36,25 +33,26 @@ do
 
     v) verbose='-v' ;;
     h) print_help ;;
-    *) echo "for usage check: myutils <function> -h" >&2 ; exit 1 ;;
+    *) echo "for usage check: pkgdeveloper <function> -h" >&2 ; exit 1 ;;
   esac
 done
 
-source "$(myutils basics -path)" Name_of_your_process $verbose
+# shellcheck disable=SC1090
+source "$(pkgdeveloper basics -path)" NameOfYourProcess "$verbose"
 
 # starting information
-verbose "JOB information"
-echo " * Date:"
-date
-echo " * Command:"
-echo "$0" "$@"
+verbose -t "JOB information"
+verbose -t "==============="
+verbose -t " Command:" "$0" "$@"
 
 # load modules
 if $cascade
 then
-  # Add flags to restart if necessary (and if you added a restart function before)
-  load_modules 
+  echo load modules for this script
 fi
 
 # ---- BODY -------------------------------------------------------------------
+echo "do your stuff here, maybe using the variable def_var: $def_var"
+
+# ---- END --------------------------------------------------------------------
 finish "message to finish"
