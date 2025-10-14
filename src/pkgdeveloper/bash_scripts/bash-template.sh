@@ -22,23 +22,23 @@ exit 0
 
 # ----- set up starts ---------------------------------------------------------
 # General variables
-def_var="inse here your default"
-cascade='false'
+def_var="insert here your default"
+cluster='false'
 verbose=''
 while getopts 'cd:vh' flag;
 do
   case "${flag}" in
     d) def_var=${OPTARG} ;;
-    c) cascade='true' ;;
+    c) cluster='true' ;;
 
     v) verbose='-v' ;;
     h) print_help ;;
-    *) echo "for usage check: pkgdeveloper <function> -h" >&2 ; exit 1 ;;
+    *) echo "for usage check: <replace_pkgname> <function> -h" >&2 ; exit 1 ;;
   esac
 done
 
 # shellcheck disable=SC1090
-source "$(pkgdeveloper basics -path)" NameOfYourProcess "$verbose"
+source "$(<replace_pkgname> basics -path)" NameOfYourProcess "$verbose"
 
 # starting information
 verbose -t "JOB information"
@@ -46,13 +46,23 @@ verbose -t "==============="
 verbose -t " Command:" "$0" "$@"
 
 # load modules
-if $cascade
+if $cluster
 then
   echo load modules for this script
 fi
 
 # ---- BODY -------------------------------------------------------------------
+verbose "important separation"
+verbose -t "do your stuff here, maybe using the variable def_var: $def_var"
+
 echo "do your stuff here, maybe using the variable def_var: $def_var"
+
+warning "This is a template script, please edit it and remove this warning."
+
+if $cluster
+then
+  fail "example of fail function"
+fi  
 
 # ---- END --------------------------------------------------------------------
 finish "message to finish"

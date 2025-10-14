@@ -30,7 +30,7 @@ while getopts 'n:o:p:vh' flag;
 do
   case "${flag}" in
     n) name=${OPTARG} ;;
-    o) outputdir='true' ;;
+    o) outputdir=${OPTARG} ;;
     p) pkg_name=${OPTARG} ;;
 
     v) verbose='-v' ;;
@@ -51,6 +51,7 @@ verbose -t "==============="
 verbose -t " Command:" "$0" "$@"
 
 # ---- BODY -------------------------------------------------------------------
+verbose "Creating $name in $outputdir"
 cd "$outputdir" || fail "outputdir ($outputdir) does not exist"
 
 if [[ "${name##*.}" != "sh" ]]
@@ -58,11 +59,11 @@ then
   name=$name.sh
 fi
 
-cp $(pkgdeveloper bash-template -path) "$output"/"$name"
-sed -i "s/NameOfYourProcess/${name%.sh}/g" "$output"/"$name"
-sed -i "s/<replace_pkgname>/${pkg_name}/g" "$output"/"$name"
-sed -i "s/<function>/${name%.sh}/g" "$output"/"$name"
-chmod +x "$output"/"$name"
+cp $(pkgdeveloper bash-template -path) "$name"
+sed -i "s/NameOfYourProcess/${name%.sh}/g" "$name"
+sed -i "s/<replace_pkgname>/${pkg_name}/g" "$name"
+sed -i "s/<function>/${name%.sh}/g" "$name"
+chmod +x "$name"
 
 # ---- END --------------------------------------------------------------------
 finish "$output"/"$name" " created and ready to be filled, it is empty.
