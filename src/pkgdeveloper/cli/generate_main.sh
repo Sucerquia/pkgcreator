@@ -43,8 +43,11 @@ source $(pkgdeveloper basics -path) GenerateMain $verbose
 
 gm_original_dir=$(pwd)
 
-[ -z "$workdir" ] && workdir="$($pkg_name path)" || fail "'package path' does
-  not exist"
+if [ -z "$workdir" ]
+then
+  workdir="$($pkg_name path)" || fail "'package path' does not exist"
+fi
+
 cd "$workdir/cli" || fail "moving to \"cli\" in working directory ($workdir)"
 
 # Create the main.py file
