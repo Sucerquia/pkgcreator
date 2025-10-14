@@ -5,14 +5,18 @@ print_help() {
 echo "
 Function that creates a mermaid map of a directory structure.
 
-Usage: pkgdeveloper files_tree <path to dir to be mapped> <pattern> [ <ignoring patters> ... ]
+  -d  <path_directory> path to the directory to be mapped. If not provided
+      \$(package_name path), where package_name provided with -n is used.
+  -i  <ignoring_patterns=''> comma separated list of patterns to be ignored.
+  -n  <package_name> name of the package to be mapped. Used to determine
+      the path if -d is not provided.
 
 The output is the string that you have to locate in an rst file in order to
 render your map. In principle, the output can be used in markdown files
 changing the corresponding keywords.
 
-Example of output in the case that the directory to be mapped contains the subdirectories
-cli and pkg_structure and the pattern is 'pkgdeveloper':
+Example of output in the case that the directory to be mapped contains the
+subdirectories cli and pkg_structure and the pattern is 'pkgdeveloper':
 
 .. mermaid::
    :align: center
