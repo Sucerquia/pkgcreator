@@ -7,7 +7,7 @@ pkgdeveloper is a tool designed to streamline the development, packaging, and di
 To install pkgdeveloper, you can use pip:
 
 ```bash
-git clone git@github.com:Sucerquia/pkgcreator.git
-cd pkgcreator
+git clone git@github.com:Sucerquia/pkgdeveloper.git
+cd pkgdeveloper
 pip install -e .
 ```

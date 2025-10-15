@@ -90,16 +90,16 @@ to create a package from scratch, generate or improve documentation, use
 functions from the terminal, and some other useful features.</p>
 <section id="create-a-package-from-scratch">
 <h2>Create a Package from Scratch<a class="headerlink" href="#create-a-package-from-scratch" title="Link to this heading"></a></h2>
-<p>Assume that you want to create a package called <code class="code docutils literal notranslate"><span class="pre">otto</span></code>. You can
+<p>Assume that you want to create a package called <code class="code docutils literal notranslate"><span class="pre">otter</span></code>. You can
 do this by running the following command in your terminal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pkgdeveloper<span class="w"> </span>starter<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;&#39;Your Name&#39;&quot;</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;&#39;otto&#39;&quot;</span><span class="w"> </span>-v
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pkgdeveloper<span class="w"> </span>starter<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;&#39;Your Name&#39;&quot;</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;&#39;otter&#39;&quot;</span><span class="w"> </span>-v
 </pre></div>
 </div>
-<p>This will create a directory called <code class="code docutils literal notranslate"><span class="pre">otto</span></code> in your current
+<p>This will create a directory called <code class="code docutils literal notranslate"><span class="pre">otter</span></code> in your current
 directory. From here, you are only one step away from having a working package.
 You just have to move into the package directory and find the ‘TODO’s and
 complete. To check it, do the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>otto
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>otter
 grep<span class="w"> </span>-r<span class="w"> </span>TODO
 </pre></div>
 </div>
@@ -123,9 +123,9 @@ make a change to the source code.</p>
 terminal as you are going to see in the next section. And just by creating and
 installing the package, you can use already some of the functionalities. For
 example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>otto<span class="w"> </span>-h<span class="w">    </span><span class="c1"># shows a description of the package</span>
-otto<span class="w"> </span>doc<span class="w">   </span><span class="c1"># opens a html documentation in your browser</span>
-otto<span class="w"> </span>path<span class="w">  </span><span class="c1"># shows the absolute path of the package</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>otter<span class="w"> </span>-h<span class="w">    </span><span class="c1"># shows a description of the package</span>
+otter<span class="w"> </span>doc<span class="w">   </span><span class="c1"># opens a html documentation in your browser</span>
+otter<span class="w"> </span>path<span class="w">  </span><span class="c1"># shows the absolute path of the package</span>
 </pre></div>
 </div>
 </section>
@@ -134,17 +134,17 @@ otto<span class="w"> </span>path<span class="w">  </span><span class="c1"># show
 <p>Assume that you want to add a python script called <code class="code docutils literal notranslate"><span class="pre">coolscript.py</span></code> to
 your package which contains a function called <code class="code docutils literal notranslate"><span class="pre">coolfunction</span></code> that prints
 some arguments that you give as an input. You can then move to
-<code class="code docutils literal notranslate"><span class="pre">src/otto</span></code> and add this script there:</p>
+<code class="code docutils literal notranslate"><span class="pre">src/otter</span></code> and add this script there:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># add2executable</span>
 <span class="k">def</span> <span class="nf">coolfunction</span><span class="p">(</span><span class="n">something</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                  <span class="n">intigers_as_well</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
-                 <span class="n">even_lists</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received values: &quot;</span><span class="p">,</span> <span class="n">something</span><span class="p">,</span> <span class="n">intigers_as_well</span><span class="p">,</span> <span class="n">even_a_lists</span><span class="p">)</span>
+                 <span class="n">even_lists</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received values: &quot;</span><span class="p">,</span> <span class="n">something</span><span class="p">,</span> <span class="n">intigers_as_well</span><span class="p">,</span> <span class="n">even_lists</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This allows you import <code class="code docutils literal notranslate"><span class="pre">coolfunction</span></code> from anywhere in your python
 scripts using:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">otto.coolscript</span> <span class="kn">import</span> <span class="n">coolfunction</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">otter.coolscript</span> <span class="kn">import</span> <span class="n">coolfunction</span>
 
 <span class="n">coolfunction</span><span class="p">(</span><span class="s2">&quot;Klasse!&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
@@ -152,23 +152,23 @@ scripts using:</p>
 <p>Also, you can execute this function from the terminal, because that we
 used the comment <code class="code docutils literal notranslate"><span class="pre">#add2executable</span></code>. You can do this by running the
 following command in your terminal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pkgdeveloper<span class="w"> </span>generate_main<span class="w"> </span>-n<span class="w"> </span>otto<span class="w"> </span>-v
-otto<span class="w"> </span>coolfunction<span class="w"> </span><span class="s2">&quot;Klasse!&quot;</span><span class="w"> </span>--intigers_as_well<span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="w"> </span>--even_lists<span class="w"> </span><span class="s2">&quot;[1,2,3]&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pkgdeveloper<span class="w"> </span>generate_main<span class="w"> </span>-n<span class="w"> </span>otter<span class="w"> </span>-v
+otter<span class="w"> </span>coolfunction<span class="w"> </span><span class="s2">&quot;Klasse!&quot;</span><span class="w"> </span>--intigers_as_well<span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="w"> </span>--even_lists<span class="w"> </span><span class="s2">&quot;[1,2,3]&quot;</span>
 </pre></div>
 </div>
 <p>you can see all the functions that you can execute from the terminal by
 running:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>otto<span class="w"> </span>-h
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>otter<span class="w"> </span>-h
 </pre></div>
 </div>
 <p>And to see how to use each function, you can run, for example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>otto<span class="w"> </span>coolfunction<span class="w"> </span>-h
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>otter<span class="w"> </span>coolfunction<span class="w"> </span>-h
 </pre></div>
 </div>
 <p>If this command does not show any description, the function that you are
 calling does not have a docstring. You can add a docstring per the function
 editing the file where they are defined, or you can use the tool .</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pkgdeveloper<span class="w"> </span>add_python_doc<span class="w"> </span>-n<span class="w"> </span>otto<span class="w"> </span>-v
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pkgdeveloper<span class="w"> </span>add_python_doc<span class="w"> </span>-n<span class="w"> </span>otter<span class="w"> </span>-v
 </pre></div>
 </div>
 <p>if you run again the command to see the docstring (with -h flag), you will see
@@ -180,22 +180,22 @@ in your package as shown before.</p>
 <h2>Add Bash Scripts<a class="headerlink" href="#add-bash-scripts" title="Link to this heading"></a></h2>
 <p>Now assume that you want to add a bash script called <code class="code docutils literal notranslate"><span class="pre">coolbash.sh</span></code> to
 your package which prints some arguments that you give as an input. You can
-then move to <code class="code docutils literal notranslate"><span class="pre">src/otto/</span></code> and add the script as you prefer, but
+then move to <code class="code docutils literal notranslate"><span class="pre">src/otter/</span></code> and add the script as you prefer, but
 <code class="code docutils literal notranslate"><span class="pre">pkgdeveloper</span></code> provides a template that you can use and guarantees that
 the script will work with the package. You can create the script using:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pkgdeveloper<span class="w"> </span>empty_sh<span class="w"> </span>-n<span class="w"> </span>coolbash<span class="w"> </span>-p<span class="w"> </span>otto<span class="w"> </span>-v
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pkgdeveloper<span class="w"> </span>empty_sh<span class="w"> </span>-n<span class="w"> </span>coolbash<span class="w"> </span>-p<span class="w"> </span>otter<span class="w"> </span>-v
 </pre></div>
 </div>
 <p>Again, you have to generate the main script again and then you can execute this
 script from the terminal. This is:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pkgdeveloper<span class="w"> </span>generate_main<span class="w"> </span>-n<span class="w"> </span>otto<span class="w"> </span>-v
-otto<span class="w"> </span>coolbash<span class="w"> </span>-h<span class="w">  </span><span class="c1"># show the help message</span>
-otto<span class="w"> </span>coolbash<span class="w"> </span>-path<span class="w">  </span><span class="c1"># show the path of the file</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pkgdeveloper<span class="w"> </span>generate_main<span class="w"> </span>-n<span class="w"> </span>otter<span class="w"> </span>-v
+otter<span class="w"> </span>coolbash<span class="w"> </span>-h<span class="w">  </span><span class="c1"># show the help message</span>
+otter<span class="w"> </span>coolbash<span class="w"> </span>-path<span class="w">  </span><span class="c1"># show the path of the file</span>
 <span class="c1"># Open the file and see that the template comes with the flags -d, -c and</span>
 <span class="c1"># -v. Run the following command to see the differences</span>
-otto<span class="w"> </span>coolbash<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;input to variable&quot;</span>
-otto<span class="w"> </span>coolbash<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;input to variable&quot;</span><span class="w"> </span>-v
-otto<span class="w"> </span>coolbash<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;input to variable&quot;</span><span class="w"> </span>-c<span class="w"> </span>-v
+otter<span class="w"> </span>coolbash<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;input to variable&quot;</span>
+otter<span class="w"> </span>coolbash<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;input to variable&quot;</span><span class="w"> </span>-v
+otter<span class="w"> </span>coolbash<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;input to variable&quot;</span><span class="w"> </span>-c<span class="w"> </span>-v
 </pre></div>
 </div>
 </section>
@@ -203,13 +203,13 @@ otto<span class="w"> </span>coolbash<span class="w"> </span>-d<span class="w"> <
 <h2>Generate Documentation of Python and Bash Scripts<a class="headerlink" href="#generate-documentation-of-python-and-bash-scripts" title="Link to this heading"></a></h2>
 <p>You can collect the documentation of all the functions in your package
 (including the bash scripts) and generate a html documentation using:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pkgdeveloper<span class="w"> </span>doc_modules<span class="w"> </span>-n<span class="w"> </span>otto<span class="w"> </span>-v
-otto<span class="w"> </span>doc<span class="w">  </span><span class="c1"># opens the html documentation in your browser</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pkgdeveloper<span class="w"> </span>doc_modules<span class="w"> </span>-n<span class="w"> </span>otter<span class="w"> </span>-v
+otter<span class="w"> </span>doc<span class="w">  </span><span class="c1"># opens the html documentation in your browser</span>
 </pre></div>
 </div>
 <p>In this way all you scripts are well documented and you can reference them in
-different rst files. For example, add :bashscript:<cite>otto.stretching</cite>
-and :func:<cite>otto.coolfunction</cite> in your index.rst file. and run the
+different rst files. For example, add :bashscript:<cite>otter.coolbash</cite>
+and :func:<cite>otter.coolscript.coolfunction</cite> in your index.rst file. and run the
 last commands.</p>
 </section>
 </section>
